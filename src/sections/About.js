@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState, useEffect, useRef } from 'react';
-import julsImg from "../assets/juls.jpg";
+import julsImg from "../images/juliana2.JPG";
 import './About.css';
 const slides = [
     {
