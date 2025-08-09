@@ -3,5 +3,11 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mywebsite/'
+  base: '/mywebsite/',
+  assetsInclude: ['**/*.pdf'],
+  server: {
+    mimeTypes: {
+      'application/pdf': ['pdf']
+    }
+  }
 })
