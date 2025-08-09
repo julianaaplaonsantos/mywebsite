@@ -1,21 +1,19 @@
 :root {
-  /* Existing colors */
   --circle1: #b08968;
   --circle2: #a67c52;
   --circle3: #8b6d5c;
   --circle4: #5d4037;
 
-  /* New colors for dark mode contact */
-  --contact-bg: #3B2F24;          /* dark espresso brown */
-  --contact-text-light: #F5F0E6;  /* cream-beige, light text */
-  --contact-text-lighter: #E6D8B8; /* softer cream for secondary text */
-  --contact-accent-light: #D9A98A; /* lighter accent for hover */
+  --contact-bg: #3B2F24;         
+  --contact-text-light: #F5F0E6;  
+  --contact-text-lighter: #E6D8B8; 
+  --contact-accent-light: #D9A98A; 
 }
 
 .contact-section {
   min-height: 100vh;
-  padding: 80px 20px 120px; /* Lifted up by increasing top padding & more bottom padding */
-  background-color: var(--contact-bg); /* This controls the background */
+  padding: 80px 20px 120px;
+  background-color: var(--contact-bg);
   color: #F5E9DC;
   display: flex;
   flex-direction: column;
@@ -42,7 +40,7 @@
 
 .contact-icon-btn {
   font-size: 2.4rem;
-  color: var(--contact-text-light); /* Icon default color */
+  color: var(--contact-text-light);
   transition: color 0.3s ease;
   cursor: pointer;
 }
@@ -51,7 +49,6 @@
   color: var(--contact-accent-light);
 }
 
-/* Contact info text */
 .contact-info {
   font-size: 1.2rem;
   font-weight: 600;
@@ -64,7 +61,6 @@
   align-items: center;
 }
 
-/* Each contact info line */
 .contact-info p {
   margin: 0;
   display: flex;
@@ -72,7 +68,6 @@
   gap: 10px;
 }
 
-/* Icon next to email & phone */
 .contact-info-icon {
   font-size: 1.4rem;
   color: var(--accent-color);
@@ -87,7 +82,6 @@
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Animate in when .visible is added */
 .contact-section.visible .contact-title,
 .contact-section.visible .contact-download-btn,
 .contact-section.visible .contact-buttons,
@@ -96,7 +90,6 @@
   transform: translateY(0);
 }
 
-/* Optionally add delays for nice staggered effect */
 .contact-section.visible .contact-title {
   transition-delay: 0.2s;
 }
@@ -127,9 +120,9 @@
   font-weight: 600;
   animation-name: slideUpFade;
   animation-delay: 0.5s;
-  background-color: transparent; /* Or set your own button background */
-  color: var(--contact-text-light); /* Button text color */
-  border: 2px solid var(--contact-text-light); /* Button border */
+  background-color: transparent;
+  color: var(--contact-text-light);
+  border: 2px solid var(--contact-text-light);
   cursor: pointer;
 }
 

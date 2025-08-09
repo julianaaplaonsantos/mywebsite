@@ -6,15 +6,15 @@
   --primary-text: #2E2E2E;
   --bg-color: #FFF9F0;
 
-  --card-bg-cream: #E6D8B8;      /* darker warm cream-beige */
-  --card-bg-terracotta: #C79982; /* deeper warm terracotta */
-  --card-bg-peach: #D9A98A;      /* richer warm peach */
+  --card-bg-cream: #E6D8B8;     
+  --card-bg-terracotta: #C79982; 
+  --card-bg-peach: #D9A98A;      
 }
 
 .section-title {
   font-size: 35px;
   margin-top: 20px;
-  margin-bottom: 20px; /* a bit more breathing room */
+  margin-bottom: 20px;
   color: var(--primary-text);
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -38,11 +38,11 @@
   background-color: var(--card-bg, #fff);
   color: var(--primary-text);
 
-  border: 3px solid rgba(106, 74, 60, 0.4); /* warm brown with some transparency */
+  border: 3px solid rgba(106, 74, 60, 0.4);
   box-shadow: 0 6px 16px rgba(106, 74, 60, 0.15);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: var(--card-bg-cream); /* default, overridden by nth-child */
+  background-color: var(--card-bg-cream); 
   color: var(--primary-text);
   cursor: pointer;
 }
@@ -93,7 +93,7 @@
 }
 
 .project-content {
-  max-height: 120px; /* or adjust */
+  max-height: 120px;
   overflow-y: auto;
   flex-grow: 1;
   padding-right: 8px;
@@ -160,7 +160,6 @@
   cursor: pointer;
 }
 
-/* Fade and slide up animation */
 @keyframes fadeSlideUp {
   0% {
     opacity: 0;
@@ -178,21 +177,17 @@
   background-color: var(--bg-color);
   color: var(--secondary-text);
   text-align: center;
-
-  /* Start hidden and shifted down */
   opacity: 0;
   transform: translateY(48px);
   transition: none;
   scroll-margin-top: 50px;
 }
 
-/* Visible state triggers animation */
 .projects-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Animate children with stagger */
 .section-title,
 .project-card,
 .see-more-container,
@@ -203,7 +198,6 @@
   animation-timing-function: ease;
 }
 
-/* Animations with delay for each element */
 .projects-section.visible .section-title {
   animation: fadeSlideUp 0.6s forwards;
   animation-delay: 0.1s;

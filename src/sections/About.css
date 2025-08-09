@@ -75,11 +75,9 @@
 
 .slider-container,
 .slider-container * {
-  color: #3E2723; /* Dark brown for better contrast */
+  color: #3E2723;
 }
 
-
-/* Slider header */
 .slider-header {
   background: linear-gradient(90deg, #A67C52, #8B5E34);
   color: white;
@@ -94,7 +92,6 @@
   box-sizing: border-box;
 }
 
-/* Slide content */
 .slide {
   animation: fadeIn 0.5s ease-in-out;
   text-align: left;
@@ -123,7 +120,6 @@
   line-height: 1.2;
 }
 
-/* Scrollbar styling */
 .slide-content::-webkit-scrollbar {
   width: 8px;
   border-radius: 12px;
@@ -167,14 +163,13 @@
 }
 
 .slider-btn.prev {
-  left: -75px; /* adjusted for bigger size */
+  left: -75px; 
 }
 
 .slider-btn.next {
   right: -75px;
 }
 
-/* pulse animation and hover remain unchanged */
 .slider-btn:active {
   animation: pulse 0.3s ease forwards;
   transform: scale(0.9);
@@ -197,11 +192,10 @@
   }
 }
 
-/* Dots container inside wrapper - remove separate fade-in */
 .dots-container {
   text-align: center;
   margin-top: 1rem;
-  /* opacity and transform removed so fade handled by parent */
+
 }
 
 .dot {
@@ -262,65 +256,61 @@
 
 .job-title {
   font-size: 1.5rem;
-  color: #5D4037;       /* current brown accent */
+  color: #5D4037;       
   font-weight: 700;
   margin-bottom: 0.1rem;
 }
 
 .job-subtitle {
-  font-size: 1rem;           /* Slightly bigger and darker */
-  color: #5D4037;              /* Darker brown */
+  font-size: 1rem;          
+  color: #5D4037;             
   margin-top: -0.5rem;
   margin-bottom: 0.9rem;
   font-style: italic;
 }
 
 .work-experience-list {
-  list-style-type: none;       /* Remove default bullets */
-  padding-left: 0;             /* Remove default padding */
+  list-style-type: none;     
+  padding-left: 0;            
   margin-top: 0;
   margin-bottom: 0;
-  color: #3E2723;              /* Darker main text color */
+  color: #3E2723;             
   line-height: 1.5;
 }
 
 .work-experience-list li {
   position: relative;
-  padding-left: 26px;          /* Space for custom bullet */
+  padding-left: 26px;       
   margin-bottom: 1rem;
   font-size: 1rem;
 }
 
-/* Custom bullet using ::before */
 .work-experience-list li::before {
-  content: "▹";                /* Triangle bullet */
+  content: "▹";               
   position: absolute;
   left: 0;
   top: 0.15em;
-  color: #A67C52;             /* Accent color */
+  color: #A67C52;            
   font-size: 1.2rem;
   line-height: 1;
 }
 
-/* Education Title (similar to job-title) */
 .edu-title {
   font-size: 1.3rem;
-  color: #5D4037;      /* brown accent */
+  color: #5D4037; 
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 0.3rem;
 }
 
-/* Subtitle for dates, degree, GPA, etc. */
 .edu-subtitle {
   font-size: 0.9rem;
-  color: #5D4037;      /* darker brown */
+  color: #5D4037;  
   margin-top: 0;
   margin-bottom: 1rem;
   font-style: italic;
 }
 
-/* Education bullet list style (similar to work-experience list) */
 .edu-list {
   list-style-type: none;
   padding-left: 0;
@@ -337,7 +327,6 @@
   font-size: 1rem;
 }
 
-/* Custom bullet with triangle */
 .edu-list li::before {
   content: "▹";
   position: absolute;
@@ -350,7 +339,7 @@
 
 .skills-category-title {
   font-size: 1.3rem;
-  color: #5D4037;          /* brown accent */
+  color: #5D4037;     
   font-weight: 700;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -372,7 +361,6 @@
   font-size: 1rem;
 }
 
-/* Custom bullet using triangle */
 .skills-list li::before {
   content: "▹";
   position: absolute;
@@ -386,9 +374,9 @@
 .tools-multi-column {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(3, 160px); /* fixed width per column */
+  grid-template-columns: repeat(3, 160px);
   gap: 1.5rem;
-  justify-content: center; /* center the whole grid */
+  justify-content: center;
 }
 
 .tools-list {
@@ -406,7 +394,6 @@
   margin-bottom: 0.6rem;
 }
 
-/* Custom bullet */
 .tools-list li::before {
   content: "▹";
   position: absolute;
@@ -421,21 +408,20 @@
   position: absolute;
   border-radius: 50%;
   opacity: 0.15;
-  pointer-events: none; /* So circles don’t interfere with clicks */
-  z-index: 0; /* Behind all content */
-  background: var(--accent-color); /* or a color from your palette */
+  pointer-events: none;
+  z-index: 0;
+  background: var(--accent-color);
   filter: blur(40px);
 }
 
-/* Position and size for each circle */
 .about-section {
-  position: relative; /* needed so absolute circles position relative to this */
+  position: relative;
 }
 
 .circle1 {
   width: 300px;
   height: 300px;
-  background: #B08968; /* coffee/nude/brown accent */
+  background: #B08968;
   top: 50px;
   left: -100px;
 }

@@ -82,8 +82,6 @@ export default function Contact() {
       >
         Download CV
       </a>
-
-      {/* bokeh divs if any */}
     </section>
   );
 }
