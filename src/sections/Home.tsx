@@ -38,7 +38,7 @@ const Home: React.FC = () => {
 
           <div className="buttons-container text-delay-3">
             <a
-              href="/CV-Santos_Juliana_A.pdf"
+              href="/CV-Juliana_A_Santos.pdf"
               download="CV-Santos_Juliana_A.pdf"
               className="download-cv-button explore-button"
             >
