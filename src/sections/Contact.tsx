@@ -8,23 +8,12 @@ export default function Contact() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Toggle visibility when the section is in viewport (e.g. 50% visible)
-        setVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.5,
-      }
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.5 }
     );
-
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
-
+    if (contactRef.current) observer.observe(contactRef.current);
     return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
-      }
+      if (contactRef.current) observer.unobserve(contactRef.current);
     };
   }, []);
 
@@ -37,52 +26,15 @@ export default function Contact() {
       <h2 className="contact-title">Let's Connect!</h2>
 
       <div className="contact-buttons">
-        <a
-          href="https://github.com/julianaaplaonsantos"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-icon-btn"
-          aria-label="GitHub"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/juliana-santos-212a78374/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-icon-btn"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://www.facebook.com/julianaaplaonsantos/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-icon-btn"
-          aria-label="Facebook"
-        >
-          <FaFacebook />
-        </a>
+        <a href="https://github.com/julianaaplaonsantos" target="_blank" rel="noopener noreferrer" className="contact-icon-btn" aria-label="GitHub"><FaGithub /></a>
+        <a href="https://www.linkedin.com/in/juliana-santos-212a78374/" target="_blank" rel="noopener noreferrer" className="contact-icon-btn" aria-label="LinkedIn"><FaLinkedin /></a>
+        <a href="https://www.facebook.com/julianaaplaonsantos/" target="_blank" rel="noopener noreferrer" className="contact-icon-btn" aria-label="Facebook"><FaFacebook /></a>
       </div>
 
       <div className="contact-info">
-        <p>
-          <FaEnvelope className="contact-info-icon" /> japlaonsantos@gmail.com
-        </p>
-        <p>
-          <FaPhone className="contact-info-icon" /> 0963 020 8143
-        </p>
+        <p><FaEnvelope className="contact-info-icon" /> japlaonsantos@gmail.com</p>
+        <p><FaPhone className="contact-info-icon" /> 09630208143</p>
       </div>
-
-      <a
-        href={`${import.meta.env.BASE_URL}CV-Juliana_A_Santos.pdf`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="download-cv-button explore-button"
-      >
-        Download CV
-      </a>
     </section>
   );
 }

@@ -1,33 +1,30 @@
 :root {
-  --circle1: #b08968;
-  --circle2: #a67c52;
-  --circle3: #8b6d5c;
-  --circle4: #5d4037;
-
-  --contact-bg: #3B2F24;         
-  --contact-text-light: #F5F0E6;  
-  --contact-text-lighter: #E6D8B8; 
-  --contact-accent-light: #D9A98A; 
+  --contact-bg: #3B2F24;
+  --contact-text-light: #F5F0E6;
+  --contact-accent-light: #D9A98A;
 }
 
 .contact-section {
   min-height: 100vh;
   padding: 80px 20px 120px;
   background-color: var(--contact-bg);
-  color: #F5E9DC;
+  color: var(--contact-text-light);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
   scroll-margin-top: -10px;
+  position: relative;
+  z-index: 1;
+  overflow: visible !important;
 }
 
 .contact-title {
-  font-size: 3.5rem;
+  margin-top: -10px;
+  font-size: 5rem;
   font-weight: 900;
-  margin-bottom: 30px;
-  color: #D9A98A;
+  margin-bottom: 55px;
+  color: var(--contact-accent-light);
   user-select: none;
 }
 
@@ -35,11 +32,11 @@
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .contact-icon-btn {
-  font-size: 2.4rem;
+  font-size: 4.5rem;
   color: var(--contact-text-light);
   transition: color 0.3s ease;
   cursor: pointer;
@@ -50,14 +47,14 @@
 }
 
 .contact-info {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #E0CFA6;
-  line-height: 1.8;
+  color: var(--contact-text-light);
+  line-height: 1.5;
   user-select: text;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -65,87 +62,61 @@
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .contact-info-icon {
-  font-size: 1.4rem;
-  color: var(--accent-color);
+  font-size: 2rem;
+  color: var(--contact-accent-light);
 }
 
-.contact-title,
-.contact-download-btn,
-.contact-buttons,
-.contact-info {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.contact-section.visible .contact-title,
-.contact-section.visible .contact-download-btn,
-.contact-section.visible .contact-buttons,
-.contact-section.visible .contact-info {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.contact-section.visible .contact-title {
-  transition-delay: 0.2s;
-}
-
-.contact-section.visible .contact-download-btn {
-  transition-delay: 0.5s;
-}
-
-.contact-section.visible .contact-buttons {
-  transition-delay: 0.8s;
-}
-
-.contact-section.visible .contact-info {
-  transition-delay: 1.1s;
-}
-
-.contact-title {
-  animation-name: slideUpFade;
-  animation-delay: 0.2s;
-}
-
-.contact-download-btn {
-  font-size: 1.2rem;      
-  padding: 18px 40px;     
-  border-radius: 35px;   
-  margin-top: 20px; 
-  margin-bottom: 30px;   
-  font-weight: 600;
-  animation-name: slideUpFade;
-  animation-delay: 0.5s;
-  background-color: transparent;
-  color: var(--contact-text-light);
-  border: 2px solid var(--contact-text-light);
-  cursor: pointer;
-}
-
-.contact-buttons {
-  font-size: 6rem;
-  margin-bottom: 28px;
-  margin-top: 5px;
-  animation-name: slideUpFade;
-  animation-delay: 0.8s;
-}
-
-.contact-buttons .contact-icon-btn {
-  font-size: 3.5rem;
-}
-
-.contact-info {
-  animation-name: slideUpFade;
-  animation-delay: 1.1s;
-}
-
-@keyframes slideUpFade {
-  to {
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.contact-title,
+.contact-icon-btn,
+.contact-info p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-section.visible .contact-title {
+  animation: fadeSlideUp 0.25s forwards;
+  animation-delay: 0.05s;
+}
+
+.contact-buttons a {
+  opacity: 0;
+  transform: translateY(40px);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.contact-section.visible .contact-buttons a:nth-child(1) {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.3s;
+}
+
+.contact-section.visible .contact-buttons a:nth-child(2) {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.5s;
+}
+
+.contact-section.visible .contact-buttons a:nth-child(3) {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.7s;
+}
+
+.contact-section.visible .contact-info p {
+  animation: fadeSlideUp 0.3s forwards;
+  animation-delay: 0.85s;
 }
