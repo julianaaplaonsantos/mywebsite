@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "module": "esnext",
-    "target": "esnext"
+    "target": "esnext",
+    "types": ["vite/client", "node", "react", "react-dom"]
   }
 }

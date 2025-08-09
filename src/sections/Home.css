@@ -290,8 +290,7 @@
   width: 120px;
   height: 120px;
   background-color: #B9692D;
-  top: 15%;
-  left: 20%;
+  top: 105%;
   animation: floatUpDown 6s infinite alternate;
 }
 
