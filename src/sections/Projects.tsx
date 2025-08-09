@@ -35,7 +35,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'Hotel Reservation Management System',
+    title: 'MRS Hotel — Hotel Reservation Management System',
     image: MRSHotel,
     description: `Developed an intuitive user interface using Java, JDBC, and MySQL to improve navigation and booking flow. Conducted thorough system testing to ensure feature completeness and a bug-free deployment. Collaborated closely with team members to refine design and functionality based on user feedback, enhancing the overall user experience.`,
     role: 'Front-End Developer & QA Tester',
