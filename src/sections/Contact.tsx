@@ -76,7 +76,7 @@ export default function Contact() {
       </div>
 
       <a
-        href="/CV-Juliana_A_Santos.pdf"
+        href={`${import.meta.env.BASE_URL}CV-Juliana_A_Santos.pdf`}
         download
         className="explore-button contact-download-btn"
       >
