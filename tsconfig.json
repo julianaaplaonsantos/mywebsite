@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     // ... other options ...
+    "skipLibCheck": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "module": "esnext",
