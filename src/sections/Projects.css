@@ -1,0 +1,296 @@
+:root {
+  --warm-brown: #6A4A3C;
+  --cream-beige: #F5F0E6;
+  --espresso-brown: #3B2F24;
+  --secondary-text: #A89F91;
+  --primary-text: #2E2E2E;
+  --bg-color: #FFF9F0;
+
+  --card-bg-cream: #E6D8B8;      /* darker warm cream-beige */
+  --card-bg-terracotta: #C79982; /* deeper warm terracotta */
+  --card-bg-peach: #D9A98A;      /* richer warm peach */
+}
+
+.section-title {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px; /* a bit more breathing room */
+  color: var(--primary-text);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+.project-card {
+  border-radius: 16px;
+  padding: 24px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg, #fff);
+  color: var(--primary-text);
+
+  border: 3px solid rgba(106, 74, 60, 0.4); /* warm brown with some transparency */
+  box-shadow: 0 6px 16px rgba(106, 74, 60, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--card-bg-cream); /* default, overridden by nth-child */
+  color: var(--primary-text);
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.project-card:nth-child(1) {
+  background-color: var(--card-bg-cream);
+  color: var(--primary-text);
+}
+
+.project-card:nth-child(2) {
+  background-color: var(--card-bg-peach);
+  color: var(--primary-text);
+}
+
+.project-card:nth-child(3) {
+  background-color: var(--card-bg-terracotta);
+  color: var(--primary-text);
+}
+
+.project-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-placeholder {
+  width: 100%;
+  height: 140px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.project-content {
+  max-height: 120px; /* or adjust */
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #3f3c33 transparent;
+}
+
+.project-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.project-content::-webkit-scrollbar-thumb {
+  background-color: #b0a78e;
+  border-radius: 4px;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+
+.project-content p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  font-weight: 600;
+}
+
+.see-more-container {
+  margin-top: -22px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--primary-text);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  user-select: none;
+}
+
+.github-button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 14px 34px;
+  background-color: var(--button-bg, #6a4a3c);
+  color: var(--button-text, #f5f0e6);
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(106, 74, 60, 0.4);
+  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+  user-select: none;
+}
+
+.github-button:hover,
+.github-button:focus {
+  background-color: var(--button-hover-bg, #a67c52);
+  color: var(--button-hover-text, #3b2f24);
+  box-shadow: 0 6px 18px rgba(166, 124, 82, 0.6);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Fade and slide up animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-section {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  background-color: var(--bg-color);
+  color: var(--secondary-text);
+  text-align: center;
+
+  /* Start hidden and shifted down */
+  opacity: 0;
+  transform: translateY(48px);
+  transition: none;
+  scroll-margin-top: 50px;
+}
+
+/* Visible state triggers animation */
+.projects-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate children with stagger */
+.section-title,
+.project-card,
+.see-more-container,
+.github-button {
+  opacity: 0;
+  transform: translateY(40px);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+/* Animations with delay for each element */
+.projects-section.visible .section-title {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.1s;
+}
+
+.projects-section.visible .project-card:nth-child(1) {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.3s;
+}
+
+.projects-section.visible .project-card:nth-child(2) {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.5s;
+}
+
+.projects-section.visible .project-card:nth-child(3) {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.7s;
+}
+
+.projects-section.visible .see-more-container {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 0.9s;
+}
+
+.projects-section.visible .github-button {
+  animation: fadeSlideUp 0.6s forwards;
+  animation-delay: 1.1s;
+}
+
+.projects-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-section .animated-circles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translateX(-50%);
+  overflow: visible;
+  z-index: 0;
+}
+
+.projects-section .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.projects-section .circle1 {
+  width: 200px;
+  height: 200px;
+  background-color: #A67C52;
+  top: 10%;
+  left: 10%;
+  animation: floatUpDown 7s infinite alternate;
+}
+
+.projects-section .circle2 {
+  width: 180px;
+  height: 180px;
+  background-color: #8B5E34;
+  top: 70%;
+  left: 75%;
+  animation: floatUpDown 9s infinite alternate 3s;
+}
+
+.projects-section .circle3 {
+  width: 220px;
+  height: 220px;
+  background-color: #B08968;
+  top: 50%;
+  left: 40%;
+  animation: floatUpDown 8s infinite alternate 1.5s;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}

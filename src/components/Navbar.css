@@ -1,0 +1,140 @@
+/* Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  padding: 1.2rem 3rem;
+  z-index: 1000;
+  background-color: #A67C52; /* Warm medium brown */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  backdrop-filter: saturate(180%) blur(12px);
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar:hover {
+  background-color: #B08968; /* Slightly lighter on hover */
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  color: #3E2723; /* Dark espresso brown */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* No underline on text */
+  position: relative;
+  z-index: 10;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #D6A77A; /* Warm highlight gold */
+}
+
+/* The original underline sliding bar */
+
+.underline {
+  position: absolute;
+  bottom: 20px;
+  height: 2px;
+  background-color: #D6A77A; /* warm highlight gold */
+  transition: left 0.3s ease, width 0.3s ease;
+  border-radius: 2px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Container for nav links sliding down together */
+.slide-down-nav {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;             /* keep links in a row */
+  gap: 2.5rem;              /* keep your spacing */
+  justify-content: flex-end; /* keep alignment */
+  width: 100%;
+}
+
+.slide-down-nav.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-nav {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-nav.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Container inside navbar for left side (contact info) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #3E2723; /* dark espresso brown */
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  flex-shrink: 0; /* prevent shrinking */
+
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.navbar-left.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Each contact item: icon + text */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Icon style (you can adjust size) */
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  fill: #5D4037; /* medium-dark brown */
+}
+
+/* Navbar container adjustments to space left and right content */
+.navbar {
+  justify-content: space-between; /* distribute left and right content */
+  padding: 1.2rem 3rem;
+}
+
+/* Slide down nav container stays right-aligned */
+.slide-down-nav {
+  justify-content: flex-end;
+  flex-grow: 1;
+}

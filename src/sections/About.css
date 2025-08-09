@@ -1,0 +1,458 @@
+:root {
+  --slide-height: 380px;
+  --slider-header-height: 46px;
+}
+
+.about-section {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  color: var(--secondary-text);
+}
+
+.about-section > h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #3E2723;
+  margin-top: -108px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2;
+}
+
+.slider-and-controls-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slider-and-controls-wrapper.fade-in-delay-1 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition-delay: 0.3s;
+}
+
+.dots-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.dots-container.fade-in-delay-2 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition-delay: 0.4s;
+}
+
+.slider-container {
+  background: linear-gradient(135deg, #f3e4d9 0%, #d8bfa8 50%, #c9a986 100%);
+  border: 2.5px solid #A67C52;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(166, 124, 82, 0.3);
+  height: var(--slide-height);
+  width: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-container,
+.slider-container * {
+  color: #3E2723; /* Dark brown for better contrast */
+}
+
+
+/* Slider header */
+.slider-header {
+  background: linear-gradient(90deg, #A67C52, #8B5E34);
+  color: white;
+  height: var(--slider-header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 650;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Slide content */
+.slide {
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: left;
+  color: #3E2723;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slide-content {
+  height: 300px;
+  padding: 35px;
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+  text-align: left;
+  padding-top: 2px;
+}
+
+.slide-content p {
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+/* Scrollbar styling */
+.slide-content::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 12px;
+}
+
+.slide-content::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 12px;
+}
+
+.slide-content::-webkit-scrollbar-thumb {
+  background-color: rgba(166, 124, 82, 0.5);
+  border-radius: 12px;
+  border: 2px solid transparent;
+}
+
+.slide-content:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(166, 124, 82, 0.7);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #A67C52;
+  border: 2.5px solid #A67C52;
+  color: #FAF4EF;
+  font-size: 2.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 8px rgba(166, 124, 82, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 2;
+  line-height: 1;
+}
+
+.slider-btn.prev {
+  left: -75px; /* adjusted for bigger size */
+}
+
+.slider-btn.next {
+  right: -75px;
+}
+
+/* pulse animation and hover remain unchanged */
+.slider-btn:active {
+  animation: pulse 0.3s ease forwards;
+  transform: scale(0.9);
+}
+
+.slider-btn:hover {
+  background-color: #B08968;
+  color: #3E2723;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(166, 124, 82, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 12px 6px rgba(166, 124, 82, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(166, 124, 82, 0);
+  }
+}
+
+/* Dots container inside wrapper - remove separate fade-in */
+.dots-container {
+  text-align: center;
+  margin-top: 1rem;
+  /* opacity and transform removed so fade handled by parent */
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+  background-color: #B9692D;
+  border: 2.5px solid #3E2723;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.dot:hover {
+  background-color: #A1571F;
+}
+
+.dot.active {
+  background-color: #3E2723;
+  border-color: #B9692D;
+  width: 20px;
+  height: 20px;
+}
+
+.personal-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.personal-image {
+  margin-top: 45px;
+  margin-right: 20px;
+  width: 220px;
+  height: auto;
+  border-radius: 15px;
+  transform: rotate(4.5deg);
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    4px 4px 0px #A67C52,
+    8px 8px 0px #8B5E34,
+    12px 12px 0px #5D4037;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.job-title {
+  font-size: 1.5rem;
+  color: #5D4037;       /* current brown accent */
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.job-subtitle {
+  font-size: 1rem;           /* Slightly bigger and darker */
+  color: #5D4037;              /* Darker brown */
+  margin-top: -0.5rem;
+  margin-bottom: 0.9rem;
+  font-style: italic;
+}
+
+.work-experience-list {
+  list-style-type: none;       /* Remove default bullets */
+  padding-left: 0;             /* Remove default padding */
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #3E2723;              /* Darker main text color */
+  line-height: 1.5;
+}
+
+.work-experience-list li {
+  position: relative;
+  padding-left: 26px;          /* Space for custom bullet */
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Custom bullet using ::before */
+.work-experience-list li::before {
+  content: "▹";                /* Triangle bullet */
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #A67C52;             /* Accent color */
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Education Title (similar to job-title) */
+.edu-title {
+  font-size: 1.3rem;
+  color: #5D4037;      /* brown accent */
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Subtitle for dates, degree, GPA, etc. */
+.edu-subtitle {
+  font-size: 0.9rem;
+  color: #5D4037;      /* darker brown */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Education bullet list style (similar to work-experience list) */
+.edu-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #3E2723;
+  line-height: 1.5;
+}
+
+.edu-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Custom bullet with triangle */
+.edu-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #A67C52;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.skills-category-title {
+  font-size: 1.3rem;
+  color: #5D4037;          /* brown accent */
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #3E2723;
+  line-height: 1.5;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+/* Custom bullet using triangle */
+.skills-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #A67C52;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.tools-multi-column {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 160px); /* fixed width per column */
+  gap: 1.5rem;
+  justify-content: center; /* center the whole grid */
+}
+
+.tools-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  color: #3E2723;
+  line-height: 1.5;
+}
+
+.tools-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 18px;
+  margin-bottom: 0.6rem;
+}
+
+/* Custom bullet */
+.tools-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #A67C52;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.about-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none; /* So circles don’t interfere with clicks */
+  z-index: 0; /* Behind all content */
+  background: var(--accent-color); /* or a color from your palette */
+  filter: blur(40px);
+}
+
+/* Position and size for each circle */
+.about-section {
+  position: relative; /* needed so absolute circles position relative to this */
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  background: #B08968; /* coffee/nude/brown accent */
+  top: 50px;
+  left: -100px;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  background: #A67C52;
+  bottom: 100px;
+  right: -120px;
+}
+
+.circle3 {
+  width: 250px;
+  height: 250px;
+  background: #8B5E34;
+  top: 200px;
+  right: 50%;
+  transform: translateX(50%);
+}
