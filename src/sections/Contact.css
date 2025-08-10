@@ -123,61 +123,50 @@
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 60px 20px 80px;
+    padding: 120px 20px 60px; /* Much more top padding for nav */
+    min-height: 85vh;
   }
 
   .contact-title {
-    font-size: 3.5rem;
-    margin-bottom: 40px;
+    font-size: 3rem; /* Smaller title */
+    margin-top: 20px; /* More space from nav */
+    margin-bottom: 30px;
   }
 
   .contact-buttons {
     gap: 20px;
+    margin-bottom: 25px;
   }
 
   .contact-icon-btn {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Smaller icons */
   }
 
   .contact-info {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-top: 10px;
   }
 
   .contact-info-icon {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .contact-section {
-    padding: 40px 15px 60px;
+    padding: 110px 15px 50px;
   }
 
   .contact-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-  }
-
-  .contact-buttons {
-    gap: 15px;
-    flex-wrap: wrap;
+    font-size: 2.2rem;
+    margin-top: 15px;
   }
 
   .contact-icon-btn {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .contact-info {
-    font-size: 1.1rem;
-  }
-
-  .contact-info p {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-
-  .contact-info-icon {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }

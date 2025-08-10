@@ -39,18 +39,16 @@ a {
 }
 
 @media (max-width: 768px) {
-  /* Ensure all sections have proper mobile spacing */
+
   section {
     min-height: auto;
     padding: 60px 15px;
   }
 
-  /* Fix any overflow issues */
   html, body {
     overflow-x: hidden;
   }
 
-  /* Make sure buttons are touch-friendly */
   .explore-button,
   .github-button,
   .contact-icon-btn {
@@ -65,12 +63,10 @@ a {
     padding: 40px 10px;
   }
 
-  /* Ensure text is readable */
   body {
     font-size: 14px;
   }
 
-  /* Make touch targets larger */
   .slider-btn,
   .dot {
     min-height: 48px;

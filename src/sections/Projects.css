@@ -321,11 +321,11 @@
     font-size: 0.9rem;
   }
 
-  /* Hide projects background circles on mobile */
+  /* Hide projects background circles on mobile
   .projects-section .circle {
     display: none;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .projects-section {
@@ -354,4 +354,5 @@
     padding: 10px 24px;
     font-size: 0.85rem;
   }
+}
 }
