@@ -261,11 +261,6 @@
   transition-delay: 1.1s;
 }
 
-.home-section {
-  position: relative;
-  overflow: hidden;
-}
-
 .home-section .animated-circles {
   position: absolute;
   top: 0;
@@ -312,69 +307,6 @@
   animation: floatUpDown 8s infinite alternate 1s;
 }
 
-@keyframes floatUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-25px);
-  }
-}
-
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column;
-    gap: 30px;
-    transform: translateY(0);
-    padding: 20px 0;
-  }
-
-  .image-wrapper {
-    width: 280px;
-    height: 280px;
-    order: 1;
-  }
-
-  .circle-bg {
-    width: 300px;
-    height: 300px;
-  }
-
-  .profile-img {
-    width: 260px;
-    height: 260px;
-  }
-
-  .text-content {
-    order: 2;
-    max-width: 100%;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  .text-content h1 {
-    font-size: 2.2rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  .text-content p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .buttons-container {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-    align-items: center;
-  }
-
-  .buttons-container .explore-button {
-    width: 200px;
-    text-align: center;
-  }
-
 @media (max-width: 768px) {
   .home-section {
     padding: 80px 20px 20px;
@@ -422,14 +354,20 @@
   .text-content p {
     font-size: 16px;
     line-height: 1.4;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    text-align: justify;
   }
 
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: 15px;
+    margin-top: 25px;
     align-items: center;
+  }
+
+  .explore-button {
+    margin-top: -5px;
+    margin-bottom: 10px;
   }
 
   .buttons-container .explore-button {
@@ -439,67 +377,36 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .home-section {
-    padding: 80px 20px 20px;
-    min-height: 85vh;
+    padding: 70px 15px 15px;
+    min-height: 80vh;
   }
 
   .home-container {
-    flex-direction: column;
-    gap: 15px;
-    transform: translateY(0);
-    padding: 0;
+    gap: 10px;
   }
 
   .image-wrapper {
-    width: 240px;
-    height: 240px;
-    margin-top: 10px;
-    order: 1;
+    width: 200px;
+    height: 200px;
   }
 
   .circle-bg {
-    width: 260px;
-    height: 260px;
-  }
-
-  .profile-img {
     width: 220px;
     height: 220px;
   }
 
-  .text-content {
-    order: 2;
-    max-width: 100%;
-    text-align: center;
-    padding: 0 15px;
-    margin-top: 5px;
+  .profile-img {
+    width: 180px;
+    height: 180px;
   }
 
   .text-content h1 {
-    font-size: 2.2rem;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-  }
-
-  .text-content p {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-bottom: 15px;
+    font-size: 1.9rem;
   }
 
   .buttons-container {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 5px;
-    align-items: center;
+    margin-top: 1-px;
   }
-
-  .buttons-container .explore-button {
-    width: 200px;
-    padding: 12px 20px;
-    text-align: center;
-  }
-}
 }
