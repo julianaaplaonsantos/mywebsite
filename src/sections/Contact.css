@@ -142,7 +142,9 @@
 @media (max-width: 768px) {
   .contact-section {
     padding: 120px 20px 60px;
+    scroll-margin-top: -10px;
     min-height: 85vh;
+    
   }
 
   .contact-title {
@@ -172,6 +174,7 @@
 
 @media (max-width: 480px) {
   .contact-section {
+    scroll-margin-top: -10px;
     padding: 110px 15px 50px;
   }
 
