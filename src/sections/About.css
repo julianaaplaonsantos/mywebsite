@@ -443,19 +443,20 @@
 
   .about-section > h2 {
     font-size: 28px;
-    margin-top: -65px;
-    margin-bottom: 15px;
+    margin-top: -60px;
+    margin-bottom: 18px;
   }
   
   .slider-container {
     width: 85%;
-    max-width: 350px;
-    height: 380px;
+    max-width: 280px;
+    height: 450px;
     margin: 0 auto;
   }
 
   .slide-content {
-    padding: 10px;
+    margin-top: -5px;
+    padding: 15px;
     height: 240px;
   }
 
@@ -468,22 +469,22 @@
   }
 
   .slider-btn.prev {
-    left: -3px;
+    left: 20px;
   }
 
   .slider-btn.next {
-    right: -3px;
+    right: 20px;
   }
 
   .dot {
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
     margin: 0 4px;
   }
 
   .dot.active {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
   }
 
   .personal-info-wrapper {

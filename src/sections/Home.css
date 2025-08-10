@@ -361,12 +361,12 @@
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: 25px;
+    margin-top: 50px;
     align-items: center;
   }
 
   .explore-button {
-    margin-top: -5px;
+    margin-top: -10px;
     margin-bottom: 10px;
   }
 
