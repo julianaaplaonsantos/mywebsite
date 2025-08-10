@@ -477,13 +477,13 @@
   }
 
   .dot {
-    width: 4px;
-    height: 4px;
+    width: 2px;
+    height: 2px;
   }
 
   .dot.active {
-    width: 6px;
-    height: 6px;
+    width: 3px;
+    height: 3px;
   }
 
   .personal-info-wrapper {
@@ -562,14 +562,14 @@
     right: 0px;
   }
 
-  .dot {
-    width: 4px;
-    height: 4px;
+   .dot {
+    width: 2px;
+    height: 2px;
   }
 
   .dot.active {
-    width: 6px;
-    height: 6px;
+    width: 3px;
+    height: 3px;
   }
 
   .job-title {
