@@ -364,7 +364,7 @@
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: -28px;
+    margin-top: -30px;
     align-items: center;
   }
 
@@ -415,6 +415,20 @@
   }
 
   .buttons-container {
-    margin-top: 50px;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: -30px;
+    align-items: center;
+  }
+
+  .explore-button {
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .buttons-container .explore-button {
+    width: 200px;
+    padding: 12px 20px;
+    text-align: center;
   }
 }
