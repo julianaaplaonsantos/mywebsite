@@ -26,14 +26,60 @@ export default function Contact() {
       <h2 className="contact-title">Let's Connect!</h2>
 
       <div className="contact-buttons">
-        <a href="https://github.com/julianaaplaonsantos" target="_blank" rel="noopener noreferrer" className="contact-icon-btn" aria-label="GitHub"><FaGithub /></a>
-        <a href="https://www.linkedin.com/in/juliana-santos-212a78374/" target="_blank" rel="noopener noreferrer" className="contact-icon-btn" aria-label="LinkedIn"><FaLinkedin /></a>
-        <a href="https://www.facebook.com/julianaaplaonsantos/" target="_blank" rel="noopener noreferrer" className="contact-icon-btn" aria-label="Facebook"><FaFacebook /></a>
+        <a
+          href="https://github.com/julianaaplaonsantos"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-icon-btn"
+          aria-label="GitHub"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/juliana-santos-212a78374/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-icon-btn"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://www.facebook.com/julianaaplaonsantos/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-icon-btn"
+          aria-label="Facebook"
+        >
+          <FaFacebook />
+        </a>
       </div>
 
       <div className="contact-info">
-        <p><FaEnvelope className="contact-info-icon" /> japlaonsantos@gmail.com</p>
-        <p><FaPhone className="contact-info-icon" /> 09630208143</p>
+        <p>
+          <FaEnvelope className="contact-info-icon" />
+          <a
+            href="mailto:japlaonsantos@gmail.com"
+            aria-label="Send email to japlaonsantos@gmail.com"
+            className="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="link"
+          >
+            japlaonsantos@gmail.com
+          </a>
+        </p>
+        <p>
+          <FaPhone className="contact-info-icon" />
+          <a
+            href="tel:+639630208143"
+            aria-label="Call 09630208143"
+            className="contact-link"
+            role="link"
+          >
+            09630208143
+          </a>
+        </p>
       </div>
     </section>
   );

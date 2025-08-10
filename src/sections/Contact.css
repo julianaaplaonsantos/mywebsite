@@ -17,6 +17,7 @@
   position: relative;
   z-index: 1;
   overflow: visible !important;
+  pointer-events: auto;
 }
 
 .contact-title {
@@ -63,11 +64,28 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  pointer-events: auto;
 }
 
 .contact-info-icon {
   font-size: 2rem;
   color: var(--contact-accent-light);
+}
+
+.contact-link {
+  color: var(--contact-text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.contact-link:hover {
+  color: var(--contact-accent-light);
+  text-decoration: underline;
 }
 
 @keyframes fadeSlideUp {
@@ -123,13 +141,13 @@
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 120px 20px 60px; /* Much more top padding for nav */
+    padding: 120px 20px 60px;
     min-height: 85vh;
   }
 
   .contact-title {
-    font-size: 3rem; /* Smaller title */
-    margin-top: 20px; /* More space from nav */
+    font-size: 3rem;
+    margin-top: 20px;
     margin-bottom: 30px;
   }
 
@@ -139,7 +157,7 @@
   }
 
   .contact-icon-btn {
-    font-size: 3rem; /* Smaller icons */
+    font-size: 3rem;
   }
 
   .contact-info {
