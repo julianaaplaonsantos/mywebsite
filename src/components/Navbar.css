@@ -4,7 +4,7 @@
   right: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 2.5rem;
   padding: 1.2rem 3rem;
   z-index: 1000;
@@ -14,7 +14,6 @@
   transition: background-color 0.3s ease;
   font-weight: 700;
   font-family: 'Lato', sans-serif;
-  height: 80px; /* Fixed height so layout stays consistent */
 }
 
 .navbar:hover {
@@ -51,6 +50,17 @@
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
 .slide-down-nav {
   opacity: 0;
   transform: translateY(-50px);
@@ -65,7 +75,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
 .fade-in-nav {
   opacity: 0;
   transform: translateX(30px);
@@ -86,6 +95,7 @@
   font-weight: 600;
   font-family: 'Lato', sans-serif;
   flex-shrink: 0;
+
   opacity: 0;
   transform: translateY(-50px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -108,17 +118,21 @@
   fill: #5D4037;
 }
 
-section {
-  padding-top: 80px; 
+.navbar {
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+}
+
+.slide-down-nav {
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
     padding: 1rem 1.5rem;
-    height: auto;
+    gap: 1rem;
   }
 
   .navbar-left {
