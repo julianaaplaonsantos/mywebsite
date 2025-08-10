@@ -505,13 +505,12 @@
 
   .about-section > h2 {
     font-size: 28px;
-    margin-top: -40px; 
+    margin-top: -20px; 
     margin-bottom: 15px;
   }
-
   .slider-container {
-    width: 90%; 
-    max-width: 400px; 
+    width: 85%; 
+    max-width: 380px; 
     height: 300px;
     margin: 0 auto;
   }
@@ -530,22 +529,22 @@
   }
 
   .slider-btn.prev {
-    left: -50px; 
+    left: -45px; 
   }
 
   .slider-btn.next {
-    right: -50px;
+    right: -45px;
   }
 
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 8px; 
+    height: 8px; 
     margin: 0 4px;
   }
 
   .dot.active {
-    width: 14px;
-    height: 14px;
+    width: 12px; 
+    height: 12px; 
   }
 
   .personal-info-wrapper {
@@ -561,6 +560,38 @@
 }
 
 @media (max-width: 480px) {
+  .home-section {
+    padding: 70px 15px 15px;
+    min-height: 80vh;
+  }
+
+  .home-container {
+    gap: 10px;
+  }
+
+  .image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-bg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .text-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .buttons-container {
+    margin-top: 0px;
+  }
+
   .slider-container {
     width: 95%;
     max-width: 350px;
@@ -579,21 +610,21 @@
   }
 
   .slider-btn.prev {
-    left: -45px;
+    left: -42px;
   }
 
   .slider-btn.next {
-    right: -45px;
+    right: -42px; 
   }
 
   .dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
 
   .dot.active {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 }
 }
