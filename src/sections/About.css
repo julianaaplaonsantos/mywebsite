@@ -469,17 +469,17 @@
   }
 
   .slider-btn.prev {
-    left: 20px;
+    left: 5px;
   }
 
   .slider-btn.next {
-    right: 20px;
+    right: 5px;
   }
 
   .dot {
     width: 2px;
     height: 2px;
-    margin: 0 2px;
+    margin-top: -40px;
   }
 
   .dot.active {
@@ -528,17 +528,17 @@
   }
 
   .slider-btn.prev {
-    left: 20px;
+    left: 5px;
   }
 
   .slider-btn.next {
-    right: 20px;
+    right: 5px;
   }
 
   .dot {
     width: 2px;
     height: 2px;
-    margin: 0 2px;
+    margin-top: -40px;
   }
 
   .dot.active {

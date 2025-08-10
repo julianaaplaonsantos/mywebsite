@@ -75,7 +75,7 @@
 .text-content p {
   color: #5D4037;
   line-height: 1.6;
-  text-align: left;
+  text-align: justify;
 }
 
 .highlight {
@@ -364,7 +364,7 @@
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: -30px;
+    margin-top: -40px;
     align-items: center;
   }
 
@@ -417,7 +417,7 @@
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: -30px;
+    margin-top: -40px;
     align-items: center;
   }
 
