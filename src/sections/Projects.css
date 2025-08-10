@@ -288,3 +288,70 @@
     transform: translateY(-30px);
   }
 }
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 60px 15px 40px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .project-card {
+    height: auto;
+    min-height: 300px;
+    padding: 20px;
+  }
+
+  .project-image,
+  .project-placeholder {
+    height: 120px;
+  }
+
+  .github-button {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  /* Hide projects background circles on mobile */
+  .projects-section .circle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 40px 10px 30px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .project-card {
+    padding: 15px;
+    min-height: 280px;
+  }
+
+  .project-image,
+  .project-placeholder {
+    height: 100px;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .github-button {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+  }
+}

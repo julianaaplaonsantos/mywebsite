@@ -120,3 +120,64 @@
   animation: fadeSlideUp 0.3s forwards;
   animation-delay: 0.85s;
 }
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 20px 80px;
+  }
+
+  .contact-title {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-buttons {
+    gap: 20px;
+  }
+
+  .contact-icon-btn {
+    font-size: 3.5rem;
+  }
+
+  .contact-info {
+    font-size: 1.3rem;
+  }
+
+  .contact-info-icon {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 15px 60px;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-buttons {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .contact-icon-btn {
+    font-size: 3rem;
+  }
+
+  .contact-info {
+    font-size: 1.1rem;
+  }
+
+  .contact-info p {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .contact-info-icon {
+    font-size: 1.4rem;
+  }
+}
