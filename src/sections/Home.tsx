@@ -38,8 +38,8 @@ const Home: React.FC = () => {
 
           <div className="buttons-container text-delay-3">
             <a
-              href={`${import.meta.env.BASE_URL}CV-Santos_Juliana_A.pdf`}
-              download="CV-Santos_Juliana_A.pdf"
+              href={`${import.meta.env.BASE_URL}CV-Juliana_A_Santos.pdf`}
+              download="CV-Juliana_A_Santos.pdf"
               className="download-cv-button explore-button"
             >
               Download CV
