@@ -477,13 +477,13 @@
   }
 
   .dot {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 6px;
+    height: 6px;
   }
 
   .dot.active {
-    width: 1rem;
-    height: 1rem;
+    width: 10px;
+    height: 10px;
   }
 
   .personal-info-wrapper {
@@ -501,6 +501,34 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 20px;
+  }
+
+  .job-title {
+    font-size: 1.1rem;
+  }
+  .job-subtitle {
+    font-size: 0.85rem;
+  }
+  .work-experience-list li {
+    font-size: 0.85rem;
+  }
+  .edu-title {
+    font-size: 1.05rem;
+  }
+  .edu-subtitle {
+    font-size: 0.8rem;
+  }
+  .edu-list li {
+    font-size: 0.85rem;
+  }
+  .skills-category-title {
+    font-size: 1rem;
+  }
+  .skills-list li {
+    font-size: 0.85rem;
+  }
+  .tools-list li {
+    font-size: 0.85rem;
   }
 }
 
@@ -535,12 +563,40 @@
   }
 
   .dot {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 6px;
+    height: 6px;
   }
 
   .dot.active {
-    width: 1rem;
-    height: 1rem;
+    width: 10px;
+    height: 10px;
+  }
+
+  .job-title {
+    font-size: 1.1rem;
+  }
+  .job-subtitle {
+    font-size: 0.85rem;
+  }
+  .work-experience-list li {
+    font-size: 0.85rem;
+  }
+  .edu-title {
+    font-size: 1.05rem;
+  }
+  .edu-subtitle {
+    font-size: 0.8rem;
+  }
+  .edu-list li {
+    font-size: 0.85rem;
+  }
+  .skills-category-title {
+    font-size: 1rem;
+  }
+  .skills-list li {
+    font-size: 0.85rem;
+  }
+  .tools-list li {
+    font-size: 0.85rem;
   }
 }
