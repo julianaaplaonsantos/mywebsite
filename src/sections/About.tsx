@@ -101,20 +101,25 @@ const slides = [
     content: (
       <div className="tools-multi-column">
         <ul className="tools-list">
-          <li>Eclipse</li>
-          <li>Android Studio</li>
+          <li>React</li>
+          <li>Vite</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>Vercel</li>
           <li>Visual Studio Code</li>
+          <li>Android Studio</li>
+        </ul>
+        <ul className="tools-list">
+          <li>Eclipse</li>
           <li>WordPress</li>
           <li>Shopify</li>
-        </ul>
-        <ul className="tools-list">
-          <li>Canva</li>
           <li>Figma</li>
+          <li>Canva</li>
           <li>Procreate</li>
           <li>IbisPaint X</li>
-          <li>Adobe Photoshop & Illustrator</li>
         </ul>
         <ul className="tools-list">
+          <li>Adobe Photoshop & Illustrator</li>
           <li>Cute Cut Pro</li>
           <li>Filmora</li>
           <li>Trello</li>
@@ -122,7 +127,6 @@ const slides = [
       </div>
     ),
   }
-
 ];
 
 const About = () => {
