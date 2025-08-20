@@ -287,8 +287,8 @@
 
   .section-title {
     font-size: 26px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 65px;
+    margin-bottom: 25px;
   }
 
   .projects-grid {
@@ -312,6 +312,10 @@
     height: 120px;
   }
 
+  .see-more-container {
+    margin-top: 20px;
+  }
+  
   .github-button {
     padding: 10px 22px;
     font-size: 0.85rem;
