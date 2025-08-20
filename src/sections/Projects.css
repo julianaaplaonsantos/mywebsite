@@ -280,10 +280,9 @@
   100% { transform: translateY(-25px); }
 }
 
-/* iPad & tablets in PORTRAIT */
 @media (max-width: 1024px) and (orientation: portrait) {
   .section-title {
-    margin-top: 100px;
+    margin-top: 80px;
     font-size: 45px;
   }
 
@@ -305,20 +304,25 @@
   }
 }
 
-/* iPad & tablets in LANDSCAPE */
-@media (max-width: 1024px) and (orientation: landscape) {
+@media (max-width: 768px) {
   .section-title {
-    margin-top: 70px;
+    margin-top: 60px;
     font-size: 40px;
   }
-
+  
   .project-card {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    padding: 15px;
-    min-height: 280px;
+    padding: 12px;
+    min-height: 350px;
     height: auto;
+  }
+
+  .project-image {
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
   }
 
   .project-content {
@@ -328,43 +332,15 @@
     justify-content: space-between;
     padding: 12px;
   }
-}
 
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 50px 12px 40px;
-  }
-
-  .section-title {
-    font-size: 26px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    max-width: 100%;
-  }
-
-  .project-card {
-    padding: 16px;
-  }
-
-  .project-card h3 {
-    margin-top: 10px; 
-    margin-bottom: 8px;
-    font-size: 1.2rem;
-    color: var(--primary-text);
-  }
-
-  .project-image-wrapper {
-    height: 120px;
+  .see-more-container {
+    margin-top: 30px;
+    font-size: 20px;
   }
 
   .github-button {
-    padding: 10px 22px;
-    font-size: 0.85rem;
+    margin-top: 12px;
+    font-size: 18px;
   }
 }
 
