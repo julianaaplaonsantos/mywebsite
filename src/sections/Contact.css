@@ -5,23 +5,22 @@
 }
 
 .contact-section {
-  min-height: 100vh;
-  padding: 80px 20px 120px;
+  height: 100vh;
+  padding: 100px 20px 60px;
   background-color: var(--contact-bg);
   color: var(--contact-text-light);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  scroll-margin-top: -10px;
+  scroll-margin-top: 80px;
   position: relative;
   z-index: 1;
-  overflow: visible !important;
-  pointer-events: auto;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .contact-title {
-  margin-top: -10px;
   font-size: 5rem;
   font-weight: 900;
   margin-bottom: 55px;
@@ -147,13 +146,11 @@
 @media (max-width: 768px) {
   .contact-section {
     padding: 120px 20px 60px;
-    min-height: 85vh;
-    
+    height: 85vh;
   }
 
   .contact-title {
     font-size: 3rem;
-    margin-top: 20px;
     margin-bottom: 30px;
   }
 
@@ -178,13 +175,12 @@
 
 @media (max-width: 480px) {
   .contact-section {
-    scroll-margin-top: -10px;
+    scroll-margin-top: 80px;
     padding: 110px 15px 50px;
   }
 
   .contact-title {
     font-size: 2.2rem;
-    margin-top: 15px;
   }
 
   .contact-icon-btn {
@@ -195,4 +191,3 @@
     font-size: 1rem;
   }
 }
-
