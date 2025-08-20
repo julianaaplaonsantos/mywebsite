@@ -280,6 +280,27 @@
   100% { transform: translateY(-25px); }
 }
 
+@media (max-width: 1024px) {
+  .section-title {
+    margin-top: -30px;
+    font-size: 45px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 100%;
+  }
+
+  .project-card {
+    margin-top: 20px;
+  }
+
+  .see-more-container {
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-section {
     padding: 50px 12px 40px;
@@ -287,7 +308,7 @@
 
   .section-title {
     font-size: 26px;
-    margin-top: 65px;
+    margin-top: 50px;
     margin-bottom: 25px;
   }
 
@@ -313,9 +334,9 @@
   }
 
   .see-more-container {
-    margin-top: 20px;
+    margin-top: 30px;
   }
-  
+
   .github-button {
     padding: 10px 22px;
     font-size: 0.85rem;
