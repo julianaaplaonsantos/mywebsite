@@ -280,24 +280,20 @@
   100% { transform: translateY(-25px); }
 }
 
-@media (max-width: 1024px) {
+/* iPad & tablets in PORTRAIT */
+@media (max-width: 1024px) and (orientation: portrait) {
   .section-title {
     margin-top: 100px;
     font-size: 45px;
   }
-  
+
   .project-card {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     padding: 15px;
-    height: 325px;
-  }
-
-  .project-image {
-    height: 150px;
-    object-fit: cover;
-    flex-shrink: 0;
+    min-height: 325px;
+    height: auto;
   }
 
   .project-content {
@@ -307,15 +303,30 @@
     justify-content: space-between;
     padding: 15px;
   }
+}
 
-  .see-more-container {
-    margin-top: 35px;
-    font-size: 22px;
+/* iPad & tablets in LANDSCAPE */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .section-title {
+    margin-top: 70px;
+    font-size: 40px;
   }
 
-  .github-button {
-    margin-top: 15px;
-    font-size: 20px;
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 15px;
+    min-height: 280px;
+    height: auto;
+  }
+
+  .project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
   }
 }
 
