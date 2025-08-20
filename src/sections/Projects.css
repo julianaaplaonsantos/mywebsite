@@ -13,7 +13,7 @@
 
 .section-title {
   font-size: 35px;
-  margin-top: 20px;
+  margin-top: -30px;
   margin-bottom: 20px;
   color: var(--primary-text);
   font-weight: 700;
@@ -278,6 +278,42 @@
   top: 50%;
   left: 40%;
   animation: floatUpDown 8s infinite alternate 1.5s;
+}
+
+.project-image-wrapper {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.project-image-wrapper:hover .project-image {
+  filter: blur(3px);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.project-image-wrapper:hover .project-overlay {
+  opacity: 1;
 }
 
 @keyframes floatUpDown {

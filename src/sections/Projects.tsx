@@ -72,9 +72,9 @@ const Projects = () => {
       ref={sectionRef}
     >
       <div className="animated-circles">
-      <div className="circle circle1"></div>
-      <div className="circle circle2"></div>
-      <div className="circle circle3"></div>
+        <div className="circle circle1"></div>
+        <div className="circle circle2"></div>
+        <div className="circle circle3"></div>
       </div>
 
       <h2 className="section-title">Latest Adventures</h2>
@@ -83,10 +83,31 @@ const Projects = () => {
         {projectsData.map(({ id, title, image, description, role, year, technologies }) => (
           <div key={id} className="project-card">
             {image ? (
-              <img src={image} alt={title} className="project-image" />
+              id === 1 || id === 2 ? (
+                <a
+                  href={
+                    id === 1
+                      ? 'https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE-WEBSITE.pdf'
+                      : 'https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf'
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-image-wrapper"
+                >
+                  <img src={image} alt={title} className="project-image" />
+                  <div className="project-overlay">
+                    <span>View Project</span>
+                  </div>
+                </a>
+              ) : (
+                <div className="project-image-wrapper">
+                  <img src={image} alt={title} className="project-image" />
+                </div>
+              )
             ) : (
               <div className="project-placeholder">Image Coming Soon</div>
             )}
+
             <h3>{title}</h3>
             <div className="project-content">
               <p className="project-description">{description}</p>
