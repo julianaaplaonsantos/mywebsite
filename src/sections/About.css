@@ -564,6 +564,10 @@
     padding: 50px 15px 40px;
   }
 
+  .about-section > h2 {
+    margin-top: -90px;
+  }
+
   .slider-container {
     width: 65%;
     max-width: 280px;
