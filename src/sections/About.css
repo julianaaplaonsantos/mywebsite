@@ -443,15 +443,13 @@
 /* tablets */
 @media (max-width: 1024px) {
   .about-section {
-    justify-content: flex-start;  
-    align-items: flex-start;       
-    padding-top: 20px;           
+    padding: 60px 20px;
   }
 
   .about-section > h2 {
-    position: relative;
-    top: -20px;                  
-    margin: 0;                     
+    margin-top: -155px;
+    margin-bottom: 30px;
+    font-size: 45px;
   }
 
   .slider-container {
@@ -467,14 +465,12 @@
 /* small tablets & large phones */
 @media (max-width: 768px) {
   .about-section {
-    justify-content: flex-start;
-    align-items: center;          
-    padding-top: 15px;
+    padding: 60px 15px 40px;
   }
 
   .about-section > h2 {
-    top: -10px;                    
-    text-align: center;
+    font-size: 28px;
+    margin-top: -155px;
   }
   
   .slider-container {
