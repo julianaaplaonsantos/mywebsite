@@ -313,13 +313,26 @@
   .home-section {
     padding: 80px 15px 100px;
     min-height: 95vh;
+    overflow: visible;
   }
 
   .home-container {
     flex-direction: column;
     gap: 30px;
-    transform: translateY(0);
+    transform: translateY(20px);
     padding: 0;
+  }
+
+    .home-section .circle1 {
+    top: 80%;
+  }
+
+  .home-section .circle2 {
+    top: 55%;
+  }
+
+  .home-section .circle3 {
+    top: 35%;
   }
 
   .image-wrapper {
@@ -388,6 +401,19 @@
 
   .home-container {
     gap: 15px;
+    transform: translateY(30px);
+  }
+
+  .home-section .circle1 {
+    top: 75%;
+  }
+
+  .home-section .circle2 {
+    top: 50%;
+  }
+
+  .home-section .circle3 {
+    top: 30%;
   }
 
   .image-wrapper {
