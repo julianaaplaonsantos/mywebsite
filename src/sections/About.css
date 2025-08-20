@@ -5,20 +5,24 @@
 
 .about-section {
   min-height: 100vh;
-  padding: 120px 20px 60px;
+  padding: 80px 20px 60px;
   max-width: 700px;
   margin: 0 auto;
   background-color: var(--bg-color);
   color: var(--secondary-text);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-section > h2 {
   font-size: 35px;
   font-weight: bold;
   color: #3E2723;
-  margin-top: -105px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -438,8 +442,12 @@
 
 /* tablets */
 @media (max-width: 1024px) {
+  .about-section {
+    padding: 60px 20px;
+  }
+
   .about-section > h2 {
-    margin-top: -30px;
+    margin-top: 0;
     margin-bottom: 30px;
     font-size: 45px;
   }
@@ -457,12 +465,12 @@
 /* small tablets & large phones */
 @media (max-width: 768px) {
   .about-section {
-    padding: 100px 15px 40px;
+    padding: 60px 15px 40px;
   }
 
   .about-section > h2 {
     font-size: 28px;
-    margin-top: -35px;
+    margin-top: 0;
     margin-bottom: 30px;
   }
   
@@ -553,6 +561,10 @@
 
 /* phones */
 @media (max-width: 480px) {
+  .about-section {
+    padding: 50px 15px 40px;
+  }
+
   .slider-container {
     width: 65%;
     max-width: 280px;
