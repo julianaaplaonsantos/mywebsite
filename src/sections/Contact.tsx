@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaLinkedin, FaFacebook, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaGithub, FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
 import "./Contact.css";
 
 export default function Contact() {
@@ -52,6 +52,15 @@ export default function Contact() {
           aria-label="Facebook"
         >
           <FaFacebook />
+        </a>
+        <a
+          href="https://wa.me/639630208143"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-icon-btn"
+          aria-label="WhatsApp"
+        >
+          <FaWhatsapp />
         </a>
       </div>
 
