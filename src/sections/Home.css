@@ -458,3 +458,18 @@
     text-align: center;
   }
 }
+
+/* iPad and tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-container {
+    transform: translateY(-60px); 
+  }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+  .home-container {
+    transform: translateY(-80px); 
+  }
+}
