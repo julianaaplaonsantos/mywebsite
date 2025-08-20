@@ -69,10 +69,10 @@
 
 .project-image {
   width: 100%;
-  height: 140px;
+  height: 100px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -285,6 +285,7 @@
   display: block;
   border-radius: 12px;
   overflow: hidden;
+  height: 180px;
 }
 
 .project-overlay {
@@ -347,6 +348,13 @@
     padding: 20px;
   }
 
+  .project-card h3 {
+    margin-top: 14px; 
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--primary-text);
+  }
+
   .project-image,
   .project-placeholder {
     height: 120px;
@@ -356,12 +364,6 @@
     padding: 12px 28px;
     font-size: 0.9rem;
   }
-
-  /* Hide projects background circles on mobile
-  .projects-section .circle {
-    display: none;
-  }
-} */
 
 @media (max-width: 480px) {
   .projects-section {
