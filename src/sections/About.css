@@ -436,6 +436,25 @@
   transform: translateX(50%);
 }
 
+/* tablets */
+@media (max-width: 1024px) {
+  .about-section > h2 {
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-size: 45px;
+  }
+
+  .slider-container {
+    height: 550px;
+  }
+
+  .personal-info-wrapper {
+    margin-top: 50px;
+    align-items: center;
+  }
+}   
+ 
+/* small tablets & large phones */
 @media (max-width: 768px) {
   .about-section {
     padding: 100px 15px 40px;
@@ -532,6 +551,7 @@
   }
 }
 
+/* phones */
 @media (max-width: 480px) {
   .slider-container {
     width: 65%;

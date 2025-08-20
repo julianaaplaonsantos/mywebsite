@@ -143,6 +143,20 @@
   animation-delay: 0.85s;
 }
 
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .contact-title {
+    font-size: 80px;
+    margin-top: 200px;
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-section {
     padding: 120px 20px 60px;
