@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--bg-color);
-  padding: 20px;
+  padding: 40px 20px;
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
   max-width: 1000px;
   width: 100%;
   gap: 40px;
-  transform: translateY(-20px);
+  transform: translateY(-40px);
 }
 
 .image-wrapper {
@@ -197,8 +197,8 @@
 
 .explore-button {
   display: inline-block;
-  margin-top: 30px;
-  margin-bottom: -20px;
+  margin-top: 60px;
+  margin-bottom: -45px;
   padding: 12px 28px;
   font-weight: 700;
   font-size: 1rem;
@@ -225,7 +225,7 @@
   display: flex;
   flex-direction: row;
   gap: 15px;
-  margin-top: -10px;
+  margin-top: -35px;
   align-items: center;
   clear: both;
 }
@@ -311,13 +311,13 @@
 
 @media (max-width: 768px) {
   .home-section {
-    padding: 40px 15px 60px;
-    min-height: 100vh;
+    padding: 80px 15px 100px;
+    min-height: 95vh;
   }
 
   .home-container {
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
     transform: translateY(0);
     padding: 0;
   }
@@ -325,7 +325,7 @@
   .image-wrapper {
     width: 240px;
     height: 240px;
-    margin-top: 0;
+    margin-top: 10px;
     order: 1;
   }
 
@@ -344,7 +344,7 @@
     max-width: 100%;
     text-align: center;
     padding: 0 15px;
-    margin-top: 0;
+    margin-top: 5px;
   }
 
   .text-content h1 {
@@ -356,21 +356,21 @@
   .text-content p {
     font-size: 16px;
     line-height: 1.4;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
     text-align: justify;
   }
 
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: 0;
+    margin-top: -40px;
     align-items: center;
   }
 
   .explore-button {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
   }
 
   .buttons-container .explore-button {
@@ -382,12 +382,12 @@
 
 @media (max-width: 480px) {
   .home-section {
-    padding: 30px 15px 50px;
-    min-height: 100vh;
+    padding: 70px 15px 120px;
+    min-height: 90vh;
   }
 
   .home-container {
-    gap: 20px;
+    gap: 15px;
   }
 
   .image-wrapper {
@@ -410,20 +410,20 @@
   }
 
   .text-content p {
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 45px;
+    padding-bottom: 30px;
   }
 
   .buttons-container {
     flex-direction: column;
     gap: 12px;
-    margin-top: 0;
+    margin-top: -40px;
     align-items: center;
   }
 
   .explore-button {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
   }
 
   .buttons-container .explore-button {

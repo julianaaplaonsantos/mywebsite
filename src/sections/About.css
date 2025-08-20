@@ -466,12 +466,11 @@
 @media (max-width: 768px) {
   .about-section {
     padding: 60px 15px 40px;
+    margin-top: -400px;
   }
 
   .about-section > h2 {
     font-size: 28px;
-    margin-top: 0;
-    margin-bottom: 30px;
   }
   
   .slider-container {
