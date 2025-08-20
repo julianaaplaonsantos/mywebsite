@@ -172,7 +172,8 @@
 }
 
 .projects-section {
-  min-height: 80vh;
+  height: 100vh;
+  max-height: 100vh;
   padding: 40px 15px 50px;
   background-color: var(--bg-color);
   color: var(--secondary-text);
@@ -181,6 +182,7 @@
   transform: translateY(40px);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .projects-section.visible {
@@ -283,8 +285,9 @@
 @media (max-width: 768px) {
   .projects-section {
     padding: 50px 12px 40px;
-        min-height: 100vh;
-    overflow: visible; 
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
   }
 
   .section-title {
@@ -348,6 +351,8 @@
 @media (max-width: 480px) {
   .projects-section {
     padding: 35px 10px 25px;
+    height: 100vh;
+    max-height: 100vh;
   }
 
   .section-title {
