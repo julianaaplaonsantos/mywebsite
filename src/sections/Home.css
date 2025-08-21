@@ -309,7 +309,7 @@
   animation: floatUpDown 8s infinite alternate 1s;
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1366px) {
   .image-wrapper {
     width: 380px;  
     height: 380px;
@@ -367,7 +367,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .home-section {
     padding: 50px 15px 60px;
     min-height: 90vh;
@@ -375,6 +375,7 @@
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    margin-bottom: 50px;
   }
 
   .home-container {

@@ -144,10 +144,10 @@
   animation-delay: 0.85s;
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1366px) {
   .contact-section {
     min-height: 100vh; 
-    height: 100vh;      
+    height: auto;      
     padding: 40px 20px; 
     display: flex;
     flex-direction: column;
@@ -191,8 +191,7 @@
   }
 }
 
-
-@media (max-width: 768px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .contact-section {
     min-height: 100vh;
     height: 100vh;
