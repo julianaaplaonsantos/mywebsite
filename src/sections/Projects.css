@@ -274,7 +274,7 @@
 @media (min-width: 769px) and (max-width: 1440px) {
   .projects-section {
     min-height: 100vh;
-    height: 100vh; 
+    height: auto; 
     width: 100%;
     background-color: var(--bg-color); 
     position: relative;
@@ -285,18 +285,19 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    padding: 40px 20px;
   }
   
   .section-title {
     font-size: 45px; 
-    margin-top: 75px; 
+    margin-top: 20px; 
     margin-bottom: 20px;
   }
   
   .projects-grid {
     grid-template-columns: repeat(3, 1fr); 
     gap: 35px;
-    max-width: 1150px;
+    max-width: 1250px;
   }
   
   .project-card {
@@ -352,7 +353,7 @@
   }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
   .projects-section {
     padding: 35px 10px 25px;
     min-height: auto;

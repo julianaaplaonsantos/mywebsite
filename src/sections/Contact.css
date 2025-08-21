@@ -144,7 +144,7 @@
   animation-delay: 0.85s;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1440px) {
   .contact-section {
     min-height: 100vh; 
     height: auto;      
@@ -191,7 +191,7 @@
   }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
   .contact-section {
     min-height: 100vh;
     height: 100vh;
