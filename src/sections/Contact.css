@@ -144,19 +144,6 @@
   animation-delay: 0.85s;
 }
 
-@media (max-width: 1024px) {
-  .contact-section {
-    padding: 60px 20px;
-    min-height: auto;
-    height: auto;
-  }
-  .contact-title {
-    font-size: 80px;
-    margin-top: 200px;
-    margin-bottom: 30px;
-  }
-}
-
 @media (max-width: 768px) {
   .contact-section {
     min-height: 100vh; 
