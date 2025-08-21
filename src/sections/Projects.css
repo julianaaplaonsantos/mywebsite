@@ -161,9 +161,9 @@
 }
 
 .projects-section {
-  min-height: 100vh;
+  min-height: auto;
   height: auto;
-  padding: 40px 15px 30px;
+  padding: 40px 15px 20px;
   background-color: var(--bg-color);
   color: var(--secondary-text);
   text-align: center;
