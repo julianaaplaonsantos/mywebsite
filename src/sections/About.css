@@ -454,14 +454,14 @@
   .about-section > h2 {
     font-size: 45px;
     font-weight: bold;
-    margin-top: -115px;   
+    margin-top: -100px;   
     margin-bottom: 25px;
     text-align: center;
   }
   
   .slider-container { 
     width: 650px; 
-    height: 460px; 
+    height: 400px; 
     margin: 0 auto;
   }
 
