@@ -161,9 +161,9 @@
 }
 
 .projects-section {
-  min-height: auto;
+  min-height: 100vh;
   height: auto;
-  padding: 40px 15px 20px;
+  padding: 40px 15px 50px;
   background-color: var(--bg-color);
   color: var(--secondary-text);
   text-align: center;
@@ -279,7 +279,7 @@
     overflow: hidden;
   }
   .projects-section > h2 {
-    margin-top: 60px;
+    margin-top: 60px !important;
   }
   .section-title {
     font-size: 26px;
