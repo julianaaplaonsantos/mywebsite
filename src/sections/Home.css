@@ -309,7 +309,7 @@
   animation: floatUpDown 8s infinite alternate 1s;
 }
 
-@media (min-width: 769px) and (max-width: 1366px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .image-wrapper {
     width: 380px;  
     height: 380px;
