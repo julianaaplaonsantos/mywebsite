@@ -163,7 +163,7 @@
 .projects-section {
   min-height: 100vh;
   height: auto;
-  padding: 40px 15px 50px;
+  padding: 40px 15px 30px;
   background-color: var(--bg-color);
   color: var(--secondary-text);
   text-align: center;
@@ -273,7 +273,7 @@
 
 @media (max-width: 768px) and (max-width: 1024px) {
   .projects-section {
-    padding: 50px 12px 40px;
+    padding: 50px 12px 20px;
     min-height: auto;
     height: auto;
     overflow: hidden;
