@@ -309,116 +309,85 @@
   animation: floatUpDown 8s infinite alternate 1s;
 }
 
-@media (max-width: 768px) {
-  .home-section {
-    padding: 80px 15px 100px;
-    min-height: 95vh;
-    overflow: visible;
-  }
-
-  .home-container {
-    flex-direction: column;
-    gap: 30px;
-    transform: translateY(20px);
-    padding: 0;
-  }
-
-    .home-section .circle1 {
-    top: 80%;
-  }
-
-  .home-section .circle2 {
-    top: 55%;
-  }
-
-  .home-section .circle3 {
-    top: 35%;
-  }
-
+@media (min-width: 769px) and (max-width: 1200px) {
   .image-wrapper {
-    width: 240px;
-    height: 240px;
-    margin-top: 10px;
-    order: 1;
+    width: 380px;  
+    height: 380px;
+    order: 0;       
+    margin-top: 0;
   }
 
   .circle-bg {
-    width: 260px;
-    height: 260px;
+    width: 400px;
+    height: 400px;
   }
 
   .profile-img {
-    width: 220px;
-    height: 220px;
+    width: 360px;
+    height: 360px;
   }
 
   .text-content {
-    order: 2;
-    max-width: 100%;
-    text-align: center;
-    padding: 0 15px;
-    margin-top: 5px;
+    max-width: 550px;
+    text-align: left;
+    padding: 0;
+    margin-top: 0;
+    order: 0; 
   }
 
   .text-content h1 {
-    font-size: 2.2rem;
-    margin-top: 10px; 
-    margin-bottom: 15px; 
+    font-size: 3.2rem;
+    margin-top: 25px;
+    margin-bottom: 20px;
   }
 
   .text-content p {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-bottom: 35px;
-    padding-bottom: 25px;
+    font-size: 18px;
+    line-height: 1.6;
     text-align: justify;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .buttons-container {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 15px;
     margin-top: -40px;
     align-items: center;
   }
 
-  .explore-button {
-    margin-top: -10px;
-    margin-bottom: 10px;
+  .buttons-container .explore-button {
+    width: auto;
+    padding: 12px 28px;
   }
 
-  .buttons-container .explore-button {
-    width: 200px;
-    padding: 12px 20px;
-    text-align: center;
+  .explore-button {
+    margin-top: 60px;
+    margin-bottom: -45px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .home-section {
-    padding: 70px 15px 120px;
+    padding: 50px 15px 60px;
     min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
   }
 
   .home-container {
-    gap: 15px;
-    transform: translateY(30px);
-  }
-
-  .home-section .circle1 {
-    top: 75%;
-  }
-
-  .home-section .circle2 {
-    top: 50%;
-  }
-
-  .home-section .circle3 {
-    top: 30%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(20px);
   }
 
   .image-wrapper {
     width: 200px;
     height: 200px;
+    margin: 40px auto 0;
   }
 
   .circle-bg {
@@ -431,45 +400,59 @@
     height: 180px;
   }
 
+  .text-content {
+    flex: 1;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
   .text-content h1 {
-    font-size: 1.9rem;
+    font-size: 40px;
+    margin: 15px 0 10px;
+    margin-top: -5px;
   }
 
   .text-content p {
-    margin-bottom: 45px;
-    padding-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: justify;
   }
 
   .buttons-container {
     flex-direction: column;
-    gap: 12px;
-    margin-top: -40px;
+    gap: 1px;
+    margin-top: -60px;
     align-items: center;
-  }
-
-  .explore-button {
-    margin-top: -10px;
-    margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 50px;
   }
 
   .buttons-container .explore-button {
-    width: 200px;
-    padding: 12px 20px;
+    width: 60%;
+    padding: 8px 12px;
+    font-size: 1rem;
     text-align: center;
   }
-}
 
-/* iPad and tablet adjustments */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .home-container {
-    transform: translateY(-60px); 
+  .home-section .circle1 {
+    top: 45%;
+    left: 12%;
   }
-}
 
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) {
-  .home-container {
-    transform: translateY(-80px); 
+  .home-section .circle2 {
+    top: -3%;
+    right: 35%;
+  }
+
+  .home-section .circle3 {
+    top: 80%;
+    left: 20%;
+  }
+
+  .home-section .circle4 {
+    top: 65%;
+    right: 15%;
   }
 }
