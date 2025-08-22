@@ -271,7 +271,7 @@
   100% { transform: translateY(-25px); }
 }
 
-@media (min-width: 769px) and (max-width: 1440px) {
+@media (min-width: 769px) and (max-width: 2000px) {
   .projects-section {
     min-height: 100vh;
     height: auto; 
