@@ -43,7 +43,6 @@ const projectsData = [
     year: "2023",
     technologies: ["Java", "JDBC", "MySQL"],
   },
-
   {
     id: 4,
     title: "Bambam Cosmetics — E-Commerce Mockup",
