@@ -49,6 +49,7 @@
 .project-card:nth-child(1) { background-color: var(--card-bg-cream); }
 .project-card:nth-child(2) { background-color: var(--card-bg-peach); }
 .project-card:nth-child(3) { background-color: var(--card-bg-terracotta); }
+.project-card:nth-child(4) { background-color: var(--card-bg-cream); }
 
 .project-image-wrapper {
   position: relative;

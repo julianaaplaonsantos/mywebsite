@@ -1,46 +1,58 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './Projects.css';
-import pawtioncareweb from '../assets/pawtioncareweb.jpg';
-import pawtioncareapp from '../assets/pawtioncareappnweb.jpg';
-import MRSHotel from '../assets/MRSHotel.jpg';
+import React, { useEffect, useRef, useState } from "react";
+import "./Projects.css";
+import pawtioncareweb from "../assets/pawtioncareweb.jpg";
+import pawtioncareapp from "../assets/pawtioncareappnweb.jpg";
+import MRSHotel from "../assets/MRSHotel.jpg";
+import bambamcos from "../assets/bambamcos.jpg";
 
 const projectsData = [
   {
     id: 1,
-    title: 'Pawtion Care — Web Platform',
+    title: "Pawtion Care — Web Platform",
     image: pawtioncareweb,
     description: `This project marks the first iteration of Pawtion Care, developed as a web-based platform focused on providing pet care resources and services. It served as the foundational version that later inspired the full-featured mobile app. The website offers essential features for pet owners to access care information and manage pet needs efficiently online.`,
-    role: 'UI/UX Designer, Front-End Developer & QA Tester',
-    year: '2023',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    role: "UI/UX Designer, Front-End Developer & QA Tester",
+    year: "2023",
+    technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
   },
   {
     id: 2,
-    title: 'Pawtion Care — Mobile & Web App',
+    title: "Pawtion Care — Mobile & Web App",
     image: pawtioncareapp,
     description: `Pawtion Care is a mobile and web-based application designed to support responsible pet adoption and assist in locating missing pets. Developed in collaboration with the Municipality of Guiguinto and My Pets Vet Clinic, the system offers a streamlined approach to pet adoption and lost pet reporting while encouraging community involvement in animal welfare.`,
-    role: 'UI/UX Designer, Front-End Developer, QA Tester & Documentation Lead',
-    year: '2024 - 2025',
+    role: "UI/UX Designer, Front-End Developer, QA Tester & Documentation Lead",
+    year: "2024 - 2025",
     technologies: [
-      'Android Studio (Java)',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Firebase Realtime Database',
-      'Firebase Authentication',
-      'Firebase Storage',
-      'Canva',
-      'Adobe Photoshop',
+      "Android Studio (Java)",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Firebase Realtime Database",
+      "Firebase Authentication",
+      "Firebase Storage",
+      "Canva",
+      "Adobe Photoshop",
     ],
   },
   {
     id: 3,
-    title: 'MRS Hotel — Hotel Reservation Management System',
+    title: "MRS Hotel — Hotel Reservation Management System",
     image: MRSHotel,
     description: `Developed an intuitive user interface using Java, JDBC, and MySQL to improve navigation and booking flow. Conducted thorough system testing to ensure feature completeness and a bug-free deployment. Collaborated closely with team members to refine design and functionality based on user feedback, enhancing the overall user experience.`,
-    role: 'UI/UX Designer, Front-End Developer & QA Tester',
-    year: '2023',
-    technologies: ['Java', 'JDBC', 'MySQL'],
+    role: "UI/UX Designer, Front-End Developer & QA Tester",
+    year: "2023",
+    technologies: ["Java", "JDBC", "MySQL"],
+  },
+
+  {
+    id: 4,
+    title: "Bambam Cosmetics — E-Commerce Mockup",
+    image: bambamcos,
+    description: `A mock-up e-commerce beauty brand website designed in Figma, showcasing a clean and modern UI for product browsing and purchasing. This project demonstrates skills in visual hierarchy, layout design, and e-commerce usability.`,
+    role: "UI/UX Designer",
+    year: "August 2025",
+    technologies: ["Figma"],
+    link: "https://www.figma.com/design/9E2zW4o2AqFyKj8uRwrION/Bambam-Cosmetics?node-id=68-120&t=iv98CQXODS5onCy4-1",
   },
 ];
 
@@ -68,7 +80,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className={`projects-section ${isVisible ? 'visible' : ''}`}
+      className={`projects-section ${isVisible ? "visible" : ""}`}
       ref={sectionRef}
     >
       <div className="animated-circles">
@@ -80,45 +92,61 @@ const Projects = () => {
       <h2 className="section-title">Latest Adventures</h2>
 
       <div className="projects-grid">
-        {projectsData.map(({ id, title, image, description, role, year, technologies }) => (
-          <div key={id} className="project-card">
-            {image ? (
-              id === 1 || id === 2 ? (
-                <a
-                  href={
-                    id === 1
-                      ? 'https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE-WEBSITE.pdf'
-                      : 'https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf'
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-image-wrapper"
-                >
-                  <img src={image} alt={title} className="project-image" />
-                  <div className="project-overlay">
-                    <span>View Project</span>
+        {projectsData.map(
+          ({ id, title, image, description, role, year, technologies }) => (
+            <div key={id} className="project-card">
+              {image ? (
+                id === 1 || id === 2 || id === 4 ? (
+                  <a
+                    href={
+                      id === 1
+                        ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE-WEBSITE.pdf"
+                        : id === 2
+                        ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf"
+                        : id === 4
+                        ? "https://www.figma.com/design/9E2zW4o2AqFyKj8uRwrION/Bambam-Cosmetics?node-id=68-120&t=iv98CQXODS5onCy4-1"
+                        : "#"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-image-wrapper"
+                  >
+                    <img src={image} alt={title} className="project-image" />
+                    <div className="project-overlay">
+                      <span>View Project</span>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="project-image-wrapper">
+                    <img src={image} alt={title} className="project-image" />
                   </div>
-                </a>
+                )
               ) : (
-                <div className="project-image-wrapper">
-                  <img src={image} alt={title} className="project-image" />
-                </div>
-              )
-            ) : (
-              <div className="project-placeholder">Image Coming Soon</div>
-            )}
-
-            <h3>{title}</h3>
-            <div className="project-content">
-              <p className="project-description">{description}</p>
-              {role && <p><strong>Role:</strong> {role}</p>}
-              {year && <p><strong>Year:</strong> {year}</p>}
-              {technologies.length > 0 && (
-                <p><strong>Technologies:</strong> {technologies.join(', ')}</p>
+                <div className="project-placeholder">Image Coming Soon</div>
               )}
+
+              <h3>{title}</h3>
+              <div className="project-content">
+                <p className="project-description">{description}</p>
+                {role && (
+                  <p>
+                    <strong>Role:</strong> {role}
+                  </p>
+                )}
+                {year && (
+                  <p>
+                    <strong>Year:</strong> {year}
+                  </p>
+                )}
+                {technologies.length > 0 && (
+                  <p>
+                    <strong>Technologies:</strong> {technologies.join(", ")}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
 
       <div className="see-more-container">
