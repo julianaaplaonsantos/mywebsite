@@ -45,13 +45,12 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Bambam Cosmetics — E-Commerce Mockup",
+    title: "Bambam Cosmetics",
     image: bambamcos,
-    description: `A mock-up e-commerce beauty brand website designed in Figma, showcasing a clean and modern UI for product browsing and purchasing. This project demonstrates skills in visual hierarchy, layout design, and e-commerce usability.`,
+    description: `A mock-up beauty brand website.`,
     role: "UI/UX Designer",
-    year: "August 2025",
+    year: "2025",
     technologies: ["Figma"],
-    link: "https://www.figma.com/design/9E2zW4o2AqFyKj8uRwrION/Bambam-Cosmetics?node-id=68-120&t=iv98CQXODS5onCy4-1",
   },
 ];
 
@@ -102,9 +101,7 @@ const Projects = () => {
                         ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE-WEBSITE.pdf"
                         : id === 2
                         ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf"
-                        : id === 4
-                        ? "https://www.figma.com/design/9E2zW4o2AqFyKj8uRwrION/Bambam-Cosmetics?node-id=68-120&t=iv98CQXODS5onCy4-1"
-                        : "#"
+                        : "https://www.figma.com/file/your-figma-file-id/Bambam-Cosmetics" // 🔗 Replace with your actual Figma link
                     }
                     target="_blank"
                     rel="noopener noreferrer"
