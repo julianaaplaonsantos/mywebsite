@@ -47,7 +47,7 @@ const projectsData = [
     id: 4,
     title: "Bambam Cosmetics",
     image: bambamcos,
-    description: `A mock-up beauty brand website.`,
+    description: `An ongoing practice-project mock-up of a beauty brand website, created in Figma. This design exercise focuses on applying UI/UX principles, experimenting with layouts, and practicing brand-oriented web design aesthetics.`,
     role: "UI/UX Designer",
     year: "2025",
     technologies: ["Figma"],
@@ -101,7 +101,7 @@ const Projects = () => {
                         ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE-WEBSITE.pdf"
                         : id === 2
                         ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf"
-                        : "https://www.figma.com/file/your-figma-file-id/Bambam-Cosmetics" // 🔗 Replace with your actual Figma link
+                        : "https://www.figma.com/design/9E2zW4o2AqFyKj8uRwrION/Bambam-Cosmetics?node-id=0-1&t=spd1bvlCAa1Q0dPI-1"
                     }
                     target="_blank"
                     rel="noopener noreferrer"
