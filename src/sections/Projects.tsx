@@ -3,7 +3,6 @@ import "./Projects.css";
 import pawtioncareweb from "../assets/pawtioncareweb.jpg";
 import pawtioncareapp from "../assets/pawtioncareappnweb.jpg";
 import MRSHotel from "../assets/MRSHotel.jpg";
-import bambamcos from "../assets/bambamcos.jpg";
 
 const projectsData = [
   {
@@ -42,15 +41,6 @@ const projectsData = [
     role: "UI/UX Designer, Front-End Developer & QA Tester",
     year: "2023",
     technologies: ["Java", "JDBC", "MySQL"],
-  },
-  {
-    id: 4,
-    title: "Bambam Cosmetics",
-    image: bambamcos,
-    description: `An ongoing practice-project mock-up of a beauty brand website, created in Figma. This design exercise focuses on applying UI/UX principles, experimenting with layouts, and practicing brand-oriented web design aesthetics.`,
-    role: "UI/UX Designer",
-    year: "2025",
-    technologies: ["Figma"],
   },
 ];
 
@@ -94,14 +84,12 @@ const Projects = () => {
           ({ id, title, image, description, role, year, technologies }) => (
             <div key={id} className="project-card">
               {image ? (
-                id === 1 || id === 2 || id === 4 ? (
+                id === 1 || id === 2 ? (
                   <a
                     href={
                       id === 1
                         ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE-WEBSITE.pdf"
-                        : id === 2
-                        ? "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf"
-                        : "https://www.figma.com/design/9E2zW4o2AqFyKj8uRwrION/Bambam-Cosmetics?node-id=0-1&t=spd1bvlCAa1Q0dPI-1"
+                        : "https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects/blob/main/PAWTION-CARE.pdf"
                     }
                     target="_blank"
                     rel="noopener noreferrer"

@@ -5,9 +5,9 @@
   --secondary-text: #A89F91;
   --primary-text: #2E2E2E;
   --bg-color: #FFF9F0;
-  --card-bg-cream: #E6D8B8;     
-  --card-bg-terracotta: #C79982; 
-  --card-bg-peach: #D9A98A;      
+  --card-bg-cream: #E6D8B8;
+  --card-bg-terracotta: #C79982;
+  --card-bg-peach: #D9A98A;
 }
 
 .section-title {
@@ -23,10 +23,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
+  max-width: 1000px;
   margin: 0 auto 40px auto;
   text-align: left;
 }
-
 
 .project-card {
   border-radius: 20px;
@@ -43,13 +43,20 @@
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
 }
 
-.project-card:nth-child(1) { background-color: var(--card-bg-cream); }
-.project-card:nth-child(2) { background-color: var(--card-bg-peach); }
-.project-card:nth-child(3) { background-color: var(--card-bg-terracotta); }
-.project-card:nth-child(4) { background-color: var(--card-bg-cream); }
+.project-card:nth-child(1) {
+  background-color: var(--card-bg-cream);
+}
+
+.project-card:nth-child(2) {
+  background-color: var(--card-bg-peach);
+}
+
+.project-card:nth-child(3) {
+  background-color: var(--card-bg-terracotta);
+}
 
 .project-image-wrapper {
   position: relative;
@@ -73,7 +80,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   color: #fff;
   display: flex;
   align-items: center;
@@ -105,7 +112,10 @@
   scrollbar-color: #3f3c33 transparent;
 }
 
-.project-content::-webkit-scrollbar { width: 6px; }
+.project-content::-webkit-scrollbar {
+  width: 6px;
+}
+
 .project-content::-webkit-scrollbar-thumb {
   background-color: #b0a78e;
   border-radius: 4px;
@@ -157,8 +167,14 @@
 }
 
 @keyframes fadeSlideUp {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .projects-section {
@@ -210,19 +226,14 @@
   animation-delay: 0.7s;
 }
 
-.projects-section.visible .project-card:nth-child(4) {
+.projects-section.visible .see-more-container {
   animation: fadeSlideUp 0.6s forwards;
   animation-delay: 0.9s;
 }
 
-.projects-section.visible .see-more-container {
-  animation: fadeSlideUp 0.6s forwards;
-  animation-delay: 1.1s;
-}
-
 .projects-section.visible .github-button {
   animation: fadeSlideUp 0.6s forwards;
-  animation-delay: 1.3s;
+  animation-delay: 1.1s;
 }
 
 .projects-section .animated-circles {
@@ -273,19 +284,23 @@
 }
 
 @keyframes floatUpDown {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-25px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
 }
 
 @media (min-width: 769px) and (max-width: 2000px) {
   .projects-section {
     min-height: 100vh;
-    height: auto; 
+    height: auto;
     width: 100%;
-    background-color: var(--bg-color); 
+    background-color: var(--bg-color);
     position: relative;
-    z-index: 2; 
-    overflow: hidden; 
+    z-index: 2;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -293,23 +308,23 @@
     box-sizing: border-box;
     padding: 40px 20px;
   }
-  
+
   .section-title {
-    font-size: 45px; 
-    margin-top: 20px; 
+    font-size: 45px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
-  
+
   .projects-grid {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 35px;
-    max-width: 100%;
+    max-width: 1250px;
   }
-  
+
   .project-card {
-    padding: 20px; 
+    padding: 20px;
   }
-  
+
   .project-image {
     width: 100%;
     height: 150px;
@@ -326,31 +341,34 @@
     max-height: 235px;
     padding: 15px 0;
   }
-  
+
   .see-more-container {
-    margin-top: -20px; 
+    margin-top: -20px;
     margin-bottom: 20px;
     font-size: 25px;
   }
-  
+
   .github-button {
     padding: 12px 24px;
-    font-size: 20px; 
+    font-size: 20px;
     margin-top: 10px;
     margin-bottom: 60px;
   }
+
   .projects-section .circle1 {
     top: 8%;
     left: 8%;
     width: 140px;
     height: 140px;
   }
+
   .projects-section .circle2 {
     top: 65%;
     left: 75%;
     width: 120px;
     height: 120px;
   }
+
   .projects-section .circle3 {
     top: 45%;
     left: 40%;
