@@ -122,7 +122,10 @@ const slides = [
 
           <h4 className="skills-category-title">Design & Multimedia</h4>
           <ul className="skills-list">
-            <li>UI/Graphic Design, Multimedia & Video Editing</li>
+            <li>
+              Product Design & UI/UX (Design, User Research, Usability Testing)
+            </li>
+            <li>Graphic Design, Multimedia & Video Editing</li>
             <li>Microsoft Office (Word, Excel, PowerPoint)</li>
           </ul>
         </div>
