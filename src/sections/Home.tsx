@@ -27,7 +27,17 @@ const Home: React.FC = () => {
             Hello, I'm <span className="highlight">Juliana!</span>
           </h1>
           <p className="text-delay-2">
-            A <span className="highlight">Summa Cum Laude</span> Information Technology graduate from Bulacan State University, aspiring <span className="highlight">UI/UX Designer</span> and <span className="highlight">Web Developer</span> with experience in web/app development, graphic design, and programming. <span className="highlight">Passionate about leveraging technical and creative skills to drive innovation</span> and contribute in dynamic, growth-oriented environments. Committed to continuous learning and delivering impactful solutions.
+            A <span className="highlight">Summa Cum Laude</span> Information
+            Technology graduate from Bulacan State University, aspiring{" "}
+            <span className="highlight">UI/UX Designer</span> and{" "}
+            <span className="highlight">Web Developer</span> with experience in
+            web/app development, graphic design, and programming.{" "}
+            <span className="highlight">
+              Passionate about leveraging technical and creative skills to drive
+              innovation
+            </span>{" "}
+            and contribute in dynamic, growth-oriented environments. Committed
+            to continuous learning and delivering impactful solutions.
           </p>
 
           <div className="animated-circles">
@@ -40,12 +50,12 @@ const Home: React.FC = () => {
             <a
               href={`${import.meta.env.BASE_URL}CV-Juliana_A_Santos.pdf`}
               download="CV-Juliana_A_Santos.pdf"
-              className="download-cv-button explore-button"
+              className="explore-button"
             >
               Download CV
             </a>
 
-            <a href="#about" className="explore-button">
+            <a href="#about" className="explore-button get-to-know-button">
               Get to know me!
             </a>
           </div>
