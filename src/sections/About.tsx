@@ -150,12 +150,12 @@ const slides = [
           <li>WordPress</li>
           <li>Shopify</li>
           <li>Figma</li>
-          <li>Canva</li>
         </ul>
         <ul className="tools-list">
+          <li>Canva</li>
           <li>Procreate</li>
           <li>IbisPaint X</li>
-          <li>Adobe Photoshop & Illustrator</li>
+          <li>Adobe Photoshop</li>
           <li>Cute Cut Pro</li>
           <li>Filmora</li>
         </ul>
