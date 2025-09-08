@@ -1,261 +1,269 @@
-import React, { useState, useEffect, useRef } from "react";
-import julsImg from "../assets/juls.JPG";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaWordpress,
+  FaFigma,
+} from "react-icons/fa";
+import {
+  SiVite,
+  SiTailwindcss,
+  SiVercel,
+  SiAndroidstudio,
+  SiEclipseide,
+  SiShopify,
+  SiCanva,
+  SiAdobephotoshop,
+} from "react-icons/si";
+import { VscCode } from "react-icons/vsc";
 import "./About.css";
-
-const slides = [
-  {
-    title: "Personal Info",
-    content: (
-      <div className="personal-info-wrapper">
-        <div className="info-list">
-          <p>
-            <strong>Name:</strong> Juliana Aplaon Santos
-          </p>
-          <p>
-            <strong>Birthdate:</strong> July 27, 2003
-          </p>
-          <p>
-            <strong>Gender:</strong> Female
-          </p>
-          <p>
-            <strong>Civil Status:</strong> Single
-          </p>
-          <p>
-            <strong>Address:</strong> Hagonoy, Bulacan
-          </p>
-          <p>
-            <strong>Citizenship:</strong> Filipino
-          </p>
-          <p>
-            <strong>Language:</strong> Tagalog & English
-          </p>
-        </div>
-
-        <img src={julsImg} alt="Juliana" className="personal-image" />
-      </div>
-    ),
-  },
-  {
-    title: "Work Experience",
-    content: (
-      <>
-        <p>
-          <strong className="job-title">
-            Local Government Unit (LGU) of Hagonoy, Bulacan — Intern
-          </strong>
-        </p>
-        <p className="job-subtitle">
-          Poblacion, Sto. Niño, Hagonoy, Bulacan | January 2025 – April 2025
-        </p>
-        <ul className="work-experience-list">
-          <li>
-            Created designs for event materials such as posters, tarpaulins,
-            name tags, and invitations using Adobe Photoshop — including select
-            merchandise like trophies and t-shirts, and the layout and color
-            scheme for the basketball court area at the grandstand in Hagonoy,
-            Bulacan.
-          </li>
-          <li>
-            Edited official documents such as gas slips, voter lists, and
-            reports; managed files through encoding, sorting, and database
-            maintenance.
-          </li>
-          <li>
-            Provided technical support by optimizing computer systems and
-            collaborated across departments to meet administrative and design
-            needs.
-          </li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    title: "Education",
-    content: (
-      <>
-        <p>
-          <strong className="edu-title">
-            Bulacan State University - Meneses Campus, Bulacan
-          </strong>
-        </p>
-        <p className="edu-subtitle">
-          Bachelor of Science in Information Technology | August 2021 – July
-          2025
-        </p>
-        <p className="edu-subtitle">Summa Cum Laude | GPA: 1.185 (2025)</p>
-        <ul className="edu-list">
-          <li>President’s Lister | GPA: 1.144 (2024-2025)</li>
-          <li>President’s Lister | GPA: 1.123 (2023-2024)</li>
-          <li>Dean’s Lister | GPA: 1.23 (2022-2023)</li>
-        </ul>
-
-        <p>
-          <strong className="edu-title">
-            St. Mary’s Academy of Hagonoy, Bulacan
-          </strong>
-        </p>
-        <p className="edu-subtitle">June 2015 – June 2021</p>
-        <ul className="edu-list">
-          <li>Best in Innovation – 2021</li>
-          <li>Conduct Awardee – 2019</li>
-        </ul>
-
-        <p>
-          <strong className="edu-title">
-            San Nicolas Elementary School, Hagonoy, Bulacan
-          </strong>
-        </p>
-        <p className="edu-subtitle">June 2007 – March 2015</p>
-      </>
-    ),
-  },
-  {
-    title: "Skills",
-    content: (
-      <>
-        <div className="skills-category">
-          <h4 className="skills-category-title">Programming</h4>
-          <ul className="skills-list">
-            <li>Java, Python, JavaScript, HTML & CSS</li>
-            <li>SQL & Firebase, Web & Mobile Development</li>
-          </ul>
-
-          <h4 className="skills-category-title">Design & Multimedia</h4>
-          <ul className="skills-list">
-            <li>
-              Product Design & UI/UX (Design, User Research, Usability Testing)
-            </li>
-            <li>Graphic Design, Multimedia & Video Editing</li>
-            <li>Microsoft Office (Word, Excel, PowerPoint)</li>
-          </ul>
-        </div>
-      </>
-    ),
-  },
-
-  {
-    title: "Tools",
-    content: (
-      <div className="tools-multi-column">
-        <ul className="tools-list">
-          <li>React</li>
-          <li>Vite</li>
-          <li>Node.js</li>
-          <li>Tailwind CSS</li>
-          <li>Git</li>
-          <li>GitHub</li>
-          <li>Vercel</li>
-        </ul>
-        <ul className="tools-list">
-          <li>Visual Studio Code</li>
-          <li>Android Studio</li>
-          <li>Eclipse</li>
-          <li>WordPress</li>
-          <li>Shopify</li>
-          <li>Figma</li>
-        </ul>
-        <ul className="tools-list">
-          <li>Canva</li>
-          <li>Procreate</li>
-          <li>IbisPaint X</li>
-          <li>Adobe Photoshop</li>
-          <li>Cute Cut Pro</li>
-          <li>Filmora</li>
-        </ul>
-      </div>
-    ),
-  },
-];
+import julianaPhoto from "../assets/juls.JPG";
 
 const About = () => {
-  const [current, setCurrent] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [showSlider, setShowSlider] = useState(false);
-  const [showControls, setShowControls] = useState(false);
-  const aboutRef = useRef<HTMLElement | null>(null);
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const workSkillsRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const aboutSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.3 }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-up");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      }
     );
-    if (aboutRef.current) observer.observe(aboutRef.current);
+    const elementsToObserve = document.querySelectorAll(
+      ".about-section .personal-info-card, .about-section .work-skills-card, .about-section .education-card, .about-section .skills-card, .about-section .tools-card"
+    );
+    elementsToObserve.forEach((el) => {
+      el.classList.add("animate-on-scroll");
+      observer.observe(el);
+    });
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (isVisible) {
-      setShowSlider(true);
-      setShowControls(false);
+    const skillsObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setSkillsVisible(true);
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+    if (workSkillsRef.current) skillsObserver.observe(workSkillsRef.current);
+    return () => skillsObserver.disconnect();
+  }, []);
 
-      const controlsTimer = setTimeout(() => {
-        setShowControls(true);
-      }, 300);
-
-      return () => clearTimeout(controlsTimer);
-    } else {
-      setShowSlider(false);
-      setShowControls(false);
+  useEffect(() => {
+    const aboutSection = aboutSectionRef.current;
+    if (aboutSection) {
+      const hash = window.location.hash;
+      if (hash === "#about") aboutSection.classList.add("section-fade-in");
+      const handleHashChange = () => {
+        if (window.location.hash === "#about")
+          aboutSection.classList.add("section-fade-in");
+      };
+      window.addEventListener("hashchange", handleHashChange);
+      return () => window.removeEventListener("hashchange", handleHashChange);
     }
-  }, [isVisible]);
+  }, []);
 
-  return (
-    <section id="about" className="about-section" ref={aboutRef}>
-      <h2 className={`about-title ${isVisible ? "fade-in" : ""}`}>
-        Come Take a Peek!
-      </h2>
+  const skillsData = [
+    { category: "Graphic Design", percentage: 99 },
+    { category: "Event Branding & Layout Design", percentage: 92 },
+    { category: "Document Editing & File Management", percentage: 95 },
+    { category: "Collaboration & Communication", percentage: 99 },
+  ];
 
-      <div
-        className={`slider-and-controls-wrapper ${
-          showSlider ? "fade-in-delay-1" : ""
-        }`}
-        aria-live="polite"
-      >
-        <button
-          className="slider-btn prev"
-          onClick={() =>
-            setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  const tools = [
+    { name: "React", icon: FaReact },
+    { name: "Vite", icon: SiVite },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+    { name: "Git", icon: FaGitAlt },
+    { name: "GitHub", icon: FaGithub },
+    { name: "Vercel", icon: SiVercel },
+    { name: "VS Code", icon: VscCode },
+    { name: "Android Studio", icon: SiAndroidstudio },
+    { name: "Eclipse", icon: SiEclipseide },
+    { name: "WordPress", icon: FaWordpress },
+    { name: "Shopify", icon: SiShopify },
+    { name: "Figma", icon: FaFigma },
+    { name: "Canva", icon: SiCanva },
+    { name: "Adobe Photoshop", icon: SiAdobephotoshop },
+  ];
+
+  const SkillCircle = ({
+    skill,
+    percentage,
+    isVisible,
+    delay = 0,
+  }: {
+    skill: string;
+    percentage: number;
+    isVisible: boolean;
+    delay?: number;
+  }) => {
+    const [progress, setProgress] = useState(0);
+    const circumference = 2 * Math.PI * 45;
+    const strokeDasharray = circumference;
+    const strokeDashoffset = circumference - (progress / 100) * circumference;
+
+    useEffect(() => {
+      if (!isVisible) return;
+      const timeout = setTimeout(() => {
+        let start = 0;
+        const duration = 80;
+        const stepTime = 16;
+        const increment = (percentage / duration) * stepTime;
+        const interval = setInterval(() => {
+          start += increment;
+          if (start >= percentage) {
+            start = percentage;
+            clearInterval(interval);
           }
-          aria-label="Previous Slide"
-        >
-          ‹
-        </button>
+          setProgress(start);
+        }, stepTime);
+        return () => clearInterval(interval);
+      }, delay);
+      return () => clearTimeout(timeout);
+    }, [isVisible, percentage, delay]);
 
-        <div className="slider-container">
-          <div className="slider-header">{slides[current].title}</div>
-          <div className="slide" key={current}>
-            <div className="slide-content">{slides[current].content}</div>
+    return (
+      <div className="skill-circle">
+        <div className="skill-circle-svg">
+          <svg className="circle-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" className="circle-bg" />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              className="circle-progress"
+              strokeDasharray={strokeDasharray}
+              strokeDashoffset={strokeDashoffset}
+              style={{
+                transition: isVisible
+                  ? "stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1)"
+                  : "none",
+              }}
+            />
+          </svg>
+          <div className="percentage-text">
+            <span className={isVisible ? "counter-animate" : ""}>
+              {Math.round(progress)}%
+            </span>
           </div>
         </div>
+        <p className="skill-text">{skill}</p>
+      </div>
+    );
+  };
 
-        <button
-          className="slider-btn next"
-          onClick={() =>
-            setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-          }
-          aria-label="Next Slide"
-        >
-          ›
-        </button>
-
-        <div
-          className={`dots-container ${showControls ? "fade-in-delay-2" : ""}`}
-          role="tablist"
-          aria-label="Slide navigation"
-        >
-          {slides.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === current ? "active" : ""}`}
-              onClick={() => setCurrent(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") setCurrent(index);
-              }}
-            ></span>
-          ))}
+  return (
+    <section id="about" className="about-section" ref={aboutSectionRef}>
+      <div className="about-container">
+        <div className="about-header">
+          <h1 className="about-title">Come take a peek!</h1>
+        </div>
+        <div className="personal-info-card">
+          <h2 className="section-title-center">PERSONAL INFO</h2>
+          <div className="personal-info-content">
+            <div className="photo-container">
+              <img
+                src={julianaPhoto}
+                alt="Juliana Aplaon Santos"
+                className="personal-photo"
+              />
+            </div>
+            <div className="personal-details">
+              <div className="info-grid">
+                <p>
+                  <span className="info-label">Name:</span> Juliana Aplaon
+                  Santos
+                </p>
+                <p>
+                  <span className="info-label">Birthdate:</span> July 27, 2003
+                </p>
+                <p>
+                  <span className="info-label">Gender:</span> Female
+                </p>
+                <p>
+                  <span className="info-label">Civil Status:</span> Single
+                </p>
+                <p>
+                  <span className="info-label">Citizenship:</span> Filipino
+                </p>
+                <p>
+                  <span className="info-label">Language:</span> Tagalog &
+                  English
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="work-skills-card" ref={workSkillsRef}>
+          <h2 className="section-title-center">
+            WORK EXPERIENCE & SKILLS GAINED
+          </h2>
+          <div className="work-content">
+            <h3 className="job-title">
+              Local Government Unit (LGU) of Hagonoy, Bulacan — Intern
+            </h3>
+            <p className="job-location">
+              Poblacion, Sto. Niño, Hagonoy, Bulacan | January 2025 – April 2025
+            </p>
+            <ul className="work-list">
+              <li>
+                <span className="bullet">▸</span>
+                <span>
+                  Created designs for event materials such as posters,
+                  tarpaulins, name tags, and invitations using Adobe Photoshop —
+                  including select merchandise like trophies and t-shirts, and
+                  the layout and color scheme for the basketball court area at
+                  the grandstand in Hagonoy, Bulacan.
+                </span>
+              </li>
+              <li>
+                <span className="bullet">▸</span>
+                <span>
+                  Edited official documents such as gas slips, voter lists, and
+                  reports; managed files through encoding, sorting, and database
+                  maintenance.
+                </span>
+              </li>
+              <li>
+                <span className="bullet">▸</span>
+                <span>
+                  Provided technical support by optimizing computer systems and
+                  collaborated across departments to meet administrative and
+                  design needs.
+                </span>
+              </li>
+            </ul>
+            <div className="skills-grid">
+              {skillsData.map((skill, index) => (
+                <SkillCircle
+                  key={index}
+                  skill={skill.category}
+                  percentage={skill.percentage}
+                  isVisible={skillsVisible}
+                  delay={index * 200}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
