@@ -5,9 +5,9 @@
   --secondary-text: #A89F91;
   --primary-text: #2E2E2E;
   --bg-color: #FFF9F0;
-  --card-bg-cream: #E6D8B8;
+  --card-bg-cream: #EDE2C8;
   --card-bg-terracotta: #C79982;
-  --card-bg-peach: #D9A98A;
+  --card-bg-peach: #F0CBA0;
 }
 
 .section-title {
@@ -25,25 +25,23 @@
   gap: 25px;
   max-width: 1000px;
   margin: 0 auto 40px auto;
-  text-align: left;
 }
 
 .project-card {
-  border-radius: 20px;
-  padding: 14px;
+  border-radius: 16px;
+  background-color: var(--card-bg, #fff);
+  border: 3px solid rgba(106, 74, 60, 0.2);
+  box-shadow: 0 6px 20px rgba(62, 39, 35, 0.12);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  background-color: var(--card-bg, #fff);
-  color: var(--primary-text);
-  border: 3px solid rgba(106, 74, 60, 0.35);
-  box-shadow: 0 5px 14px rgba(106, 74, 60, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(62, 39, 35, 0.2);
 }
 
 .project-card:nth-child(1) {
@@ -58,13 +56,21 @@
   background-color: var(--card-bg-terracotta);
 }
 
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--espresso-brown);
+  margin-bottom: 8px;
+}
+
 .project-image-wrapper {
   position: relative;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   width: 100%;
-  height: 150px;
+  height: 160px;
   flex-shrink: 0;
+  margin-bottom: 12px;
 }
 
 .project-image {
@@ -72,6 +78,7 @@
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease;
+  border-radius: 12px;
 }
 
 .project-overlay {
@@ -80,7 +87,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.35);
   color: #fff;
   display: flex;
   align-items: center;
@@ -89,12 +96,12 @@
   font-size: 1rem;
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 10px;
+  border-radius: 12px;
   pointer-events: none;
 }
 
 .project-image-wrapper:hover .project-image {
-  filter: blur(3px);
+  filter: blur(2px);
   transform: scale(1.05);
 }
 
@@ -103,13 +110,14 @@
 }
 
 .project-content {
-  flex-grow: 1;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   padding-right: 6px;
-  max-height: 100px;
+  max-height: 160px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #3f3c33 transparent;
+  scrollbar-color: rgba(106, 74, 60, 0.35) transparent;
 }
 
 .project-content::-webkit-scrollbar {
@@ -117,27 +125,30 @@
 }
 
 .project-content::-webkit-scrollbar-thumb {
-  background-color: #b0a78e;
+  background-color: rgba(106, 74, 60, 0.35);
   border-radius: 4px;
 }
 
 .project-description {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--secondary-text);
-  font-weight: 500;
+  text-align: justify;
 }
 
 .project-content p {
-  margin: 5px 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--secondary-text);
-  font-weight: 600;
+  margin: 2px 0;
+  text-align: left;
+}
+
+.project-content strong {
+  color: var(--espresso-brown);
 }
 
 .see-more-container {
-  margin-top: -30px;
+  margin-top: -20px;
   text-align: center;
   color: var(--primary-text);
   font-size: 1.05rem;
@@ -147,7 +158,7 @@
 
 .github-button {
   display: inline-block;
-  margin-top: 6px;
+  margin-top: 8px;
   padding: 12px 28px;
   background-color: var(--warm-brown);
   color: var(--cream-beige);
@@ -156,7 +167,7 @@
   font-weight: 700;
   font-size: 0.95rem;
   box-shadow: 0 4px 10px rgba(106, 74, 60, 0.35);
-  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+  transition: all 0.3s ease;
 }
 
 .github-button:hover,
@@ -164,17 +175,6 @@
   background-color: #a67c52;
   color: #3b2f24;
   box-shadow: 0 6px 16px rgba(166, 124, 82, 0.55);
-}
-
-@keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .projects-section {
@@ -283,6 +283,17 @@
   animation: floatUpDown 8s infinite alternate 1.5s;
 }
 
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes floatUpDown {
   0% {
     transform: translateY(0);
@@ -294,19 +305,11 @@
 
 @media (min-width: 769px) and (max-width: 2000px) {
   .projects-section {
-    min-height: 100vh;
-    height: auto;
-    width: 100%;
-    background-color: var(--bg-color);
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    padding: 40px 20px;
   }
 
   .section-title {
@@ -325,16 +328,8 @@
     padding: 20px;
   }
 
-  .project-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-  }
-
   .project-image-wrapper {
     height: 120px;
-    width: 100%;
   }
 
   .project-content {
@@ -354,34 +349,11 @@
     margin-top: 10px;
     margin-bottom: 60px;
   }
-
-  .projects-section .circle1 {
-    top: 8%;
-    left: 8%;
-    width: 140px;
-    height: 140px;
-  }
-
-  .projects-section .circle2 {
-    top: 65%;
-    left: 75%;
-    width: 120px;
-    height: 120px;
-  }
-
-  .projects-section .circle3 {
-    top: 45%;
-    left: 40%;
-    width: 160px;
-    height: 160px;
-  }
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
   .projects-section {
     padding: 35px 10px 25px;
-    min-height: auto;
-    height: auto;
     max-width: 360px;
     margin: 0 auto;
   }
@@ -394,25 +366,26 @@
 
   .project-card {
     padding: 12px;
-    max-width: 100%;
-    margin: 0 auto;
   }
 
   .project-image-wrapper {
-    height: 100px;
+    height: 120px;
   }
 
   .project-description {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .project-content p {
+    font-size: 0.8rem;
   }
 
   .see-more-container {
-    margin-top: -30px;
-    text-align: center;
+    margin-top: -20px;
   }
 
   .github-button {
-    padding: 8px 20px;
+    padding: 8px 18px;
     font-size: 0.8rem;
   }
 }
