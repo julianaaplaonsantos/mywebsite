@@ -22,8 +22,11 @@ import "./About.css";
 import julianaPhoto from "../assets/juls.JPG";
 
 const About = () => {
-  const [skillsVisible, setSkillsVisible] = useState(false);
-  const workSkillsRef = useRef<HTMLDivElement>(null);
+  const [skillsVisible, setSkillsVisible] = useState({
+    skillsGained: false,
+    skills: false,
+  });
+  const skillsGainedRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +35,12 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-up");
+            const index = Array.from(
+              entry.target.parentElement?.children || []
+            ).indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add("fade-up");
+            }, index * 100);
             observer.unobserve(entry.target);
           }
         });
@@ -43,7 +51,7 @@ const About = () => {
       }
     );
     const elementsToObserve = document.querySelectorAll(
-      ".about-section .personal-info-card, .about-section .work-skills-card, .about-section .education-card, .about-section .skills-card, .about-section .tools-card"
+      ".about-section .personal-info-card, .about-section .skills-gained-card, .about-section .education-card, .about-section .skills-card, .about-section .tools-card, .about-section .work-experience-card"
     );
     elementsToObserve.forEach((el) => {
       el.classList.add("animate-on-scroll");
@@ -53,27 +61,48 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    const skillsObserver = new IntersectionObserver(
+    const skillsGainedObserver = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setSkillsVisible(true);
+        if (entry.isIntersecting) {
+          setSkillsVisible((prev) => ({ ...prev, skillsGained: true }));
+        }
       },
       {
         threshold: 0.3,
         rootMargin: "0px 0px -100px 0px",
       }
     );
-    if (workSkillsRef.current) skillsObserver.observe(workSkillsRef.current);
-    return () => skillsObserver.disconnect();
+    const skillsObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSkillsVisible((prev) => ({ ...prev, skills: true }));
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+    if (skillsGainedRef.current)
+      skillsGainedObserver.observe(skillsGainedRef.current);
+    if (skillsRef.current) skillsObserver.observe(skillsRef.current);
+    return () => {
+      skillsGainedObserver.disconnect();
+      skillsObserver.disconnect();
+    };
   }, []);
 
   useEffect(() => {
     const aboutSection = aboutSectionRef.current;
     if (aboutSection) {
       const hash = window.location.hash;
-      if (hash === "#about") aboutSection.classList.add("section-fade-in");
+      if (hash === "#about") {
+        aboutSection.classList.add("section-fade-in");
+      }
       const handleHashChange = () => {
-        if (window.location.hash === "#about")
+        if (window.location.hash === "#about") {
           aboutSection.classList.add("section-fade-in");
+        }
       };
       window.addEventListener("hashchange", handleHashChange);
       return () => window.removeEventListener("hashchange", handleHashChange);
@@ -213,10 +242,8 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="work-skills-card" ref={workSkillsRef}>
-          <h2 className="section-title-center">
-            WORK EXPERIENCE & SKILLS GAINED
-          </h2>
+        <div className="work-experience-card">
+          <h2 className="section-title-center">WORK EXPERIENCE</h2>
           <div className="work-content">
             <h3 className="job-title">
               Local Government Unit (LGU) of Hagonoy, Bulacan — Intern
@@ -252,17 +279,109 @@ const About = () => {
                 </span>
               </li>
             </ul>
-            <div className="skills-grid">
-              {skillsData.map((skill, index) => (
+          </div>
+        </div>
+        <div className="skills-gained-card" ref={skillsGainedRef}>
+          <h2 className="section-title-center">SKILLS GAINED</h2>
+          <div className="skills-grid">
+            {skillsData.map((skill, index) => (
+              <SkillCircle
+                key={index}
+                skill={skill.category}
+                percentage={skill.percentage}
+                isVisible={skillsVisible.skillsGained}
+                delay={index * 200}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="education-card">
+          <h2 className="section-title-center">EDUCATIONAL BACKGROUND</h2>
+          <div className="education-content">
+            <div className="education-main">
+              <h3 className="education-title">
+                Bulacan State University - Meneses Campus, Bulacan
+              </h3>
+              <p className="education-degree">
+                Bachelor of Science in Information Technology
+              </p>
+              <p className="education-date">August 2021 – July 2025</p>
+              <p className="education-gpa">
+                Summa Cum Laude | GPA: 1.185 (2025)
+              </p>
+              <ul className="education-honors">
+                <li>President's Lister | GPA: 1.144 (2024-2025)</li>
+                <li>President's Lister | GPA: 1.123 (2023-2024)</li>
+                <li>Dean's Lister | GPA: 1.23 (2022-2023)</li>
+              </ul>
+            </div>
+            <div className="education-secondary">
+              <div className="school-item">
+                <h3 className="school-title">
+                  St. Mary's Academy of Hagonoy, Bulacan
+                </h3>
+                <p className="school-date">June 2015 – June 2021</p>
+                <ul className="school-awards">
+                  <li>Best in Innovation – 2021</li>
+                  <li>Conduct Awardee – 2019</li>
+                </ul>
+              </div>
+              <div className="school-item">
+                <h3 className="school-title">
+                  San Nicolas Elementary School, Hagonoy, Bulacan
+                </h3>
+                <p className="school-date">June 2007 – March 2015</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="skills-card" ref={skillsRef}>
+          <h2 className="section-title-center">SKILLS</h2>
+          <div className="skills-grid">
+            {[
+              { skill: "Java", rating: 4.5 },
+              { skill: "Python", rating: 4.2 },
+              { skill: "JavaScript", rating: 4.6 },
+              { skill: "HTML & CSS", rating: 4.8 },
+              { skill: "SQL", rating: 4.5 },
+              { skill: "Firebase", rating: 4.2 },
+              { skill: "Web Development", rating: 4.8 },
+              { skill: "Mobile Development", rating: 4.6 },
+              { skill: "UI/UX Design", rating: 4.8 },
+              { skill: "User Research", rating: 4.8 },
+              { skill: "Usability Testing", rating: 4.8 },
+              { skill: "Graphic Design", rating: 4.7 },
+              { skill: "Multimedia", rating: 4.7 },
+              { skill: "Video Editing", rating: 4.4 },
+              { skill: "Microsoft Office", rating: 4.7 },
+            ].map((skillObj, index) => {
+              const percentage = (skillObj.rating / 5) * 100;
+              return (
                 <SkillCircle
                   key={index}
-                  skill={skill.category}
-                  percentage={skill.percentage}
-                  isVisible={skillsVisible}
-                  delay={index * 200}
+                  skill={skillObj.skill}
+                  percentage={percentage}
+                  isVisible={skillsVisible.skills}
+                  delay={index * 100}
                 />
-              ))}
-            </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="tools-card">
+          <h2 className="section-title-center">TOOLS</h2>
+          <div className="tools-grid">
+            {tools.map((tool, index) => {
+              const Icon = tool.icon;
+              return (
+                <div key={index} className="tool-item">
+                  <div className="tool-icon">
+                    <Icon />
+                  </div>
+                  <span className="tool-name">{tool.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
