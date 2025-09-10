@@ -6,6 +6,9 @@ import {
   FaGithub,
   FaWordpress,
   FaFigma,
+  FaFileWord,
+  FaFileExcel,
+  FaFilePowerpoint,
 } from "react-icons/fa";
 import {
   SiVite,
@@ -132,6 +135,9 @@ const About = () => {
     { name: "Figma", icon: FaFigma },
     { name: "Canva", icon: SiCanva },
     { name: "Adobe Photoshop", icon: SiAdobephotoshop },
+    { name: "Microsoft Word", icon: FaFileWord },
+    { name: "Microsoft Excel", icon: FaFileExcel },
+    { name: "Microsoft PowerPoint", icon: FaFilePowerpoint },
   ];
 
   const SkillCircle = ({

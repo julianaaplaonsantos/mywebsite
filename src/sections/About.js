@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useRef, useState } from "react";
-import { FaReact, FaNodeJs, FaGitAlt, FaGithub, FaWordpress, FaFigma, } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaGitAlt, FaGithub, FaWordpress, FaFigma, FaFileWord, FaFileExcel, FaFilePowerpoint, } from "react-icons/fa";
 import { SiVite, SiTailwindcss, SiVercel, SiAndroidstudio, SiEclipseide, SiShopify, SiCanva, SiAdobephotoshop, } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import "./About.css";
@@ -99,6 +99,9 @@ const About = () => {
         { name: "Figma", icon: FaFigma },
         { name: "Canva", icon: SiCanva },
         { name: "Adobe Photoshop", icon: SiAdobephotoshop },
+        { name: "Microsoft Word", icon: FaFileWord },
+        { name: "Microsoft Excel", icon: FaFileExcel },
+        { name: "Microsoft PowerPoint", icon: FaFilePowerpoint },
     ];
     const SkillCircle = ({ skill, percentage, isVisible, delay = 0, }) => {
         const [progress, setProgress] = useState(0);
