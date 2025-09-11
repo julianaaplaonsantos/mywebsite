@@ -136,7 +136,7 @@ const Projects = () => {
       <div className="see-more-container">
         <p>See more projects here:</p>
         <a
-          href="https://github.com/julianaaplaonsantos/Juliana-Aplaon-Santos-Projects"
+          href="https://github.com/julianaaplaonsantos"
           target="_blank"
           rel="noopener noreferrer"
           className="github-button"
